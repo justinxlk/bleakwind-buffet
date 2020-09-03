@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BleakwindBuffet.Data.Side_Classes
+namespace BleakwindBuffet.Data.Sides
 {
     class Vokun_Salad
     {

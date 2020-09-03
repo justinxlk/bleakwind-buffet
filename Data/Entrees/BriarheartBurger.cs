@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Entree
+namespace Data.Entrees
 {
     public class BriarheartBurger
     {

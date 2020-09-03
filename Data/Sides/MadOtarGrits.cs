@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BleakwindBuffet.Data.Side_Classes
+namespace BleakwindBuffet.Data.Sides
 {
-    class Dragonborn_Waffle_Fries
+    class Mad_Otar_Grits
     {
         public BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
 
@@ -12,9 +12,9 @@ namespace BleakwindBuffet.Data.Side_Classes
         {
             get
             {
-                if (Size == Enums.Size.Small) return 0.42;
-                if (Size == Enums.Size.Medium) return 0.76;
-                if (Size == Enums.Size.Large) return 0.96;
+                if (Size == Enums.Size.Small) return 1.22;
+                if (Size == Enums.Size.Medium) return 1.58;
+                if (Size == Enums.Size.Large) return 1.93;
                 throw new NotImplementedException("Unknown size of {Size}");
             }
         }
@@ -23,9 +23,9 @@ namespace BleakwindBuffet.Data.Side_Classes
         {
             get
             {
-                if (Size == Enums.Size.Small) return 77;
-                if (Size == Enums.Size.Medium) return 89;
-                if (Size == Enums.Size.Large) return 100;
+                if (Size == Enums.Size.Small) return 105;
+                if (Size == Enums.Size.Medium) return 142;
+                if (Size == Enums.Size.Large) return 179;
                 throw new NotImplementedException("Unknown size of {Size}");
             }
         }
@@ -41,7 +41,7 @@ namespace BleakwindBuffet.Data.Side_Classes
 
         public override string ToString()
         {
-            return "{Size} Dragonborn Waffle Fries";
+            return "{Size} Mad Otar Grits";
         }
     }
 }

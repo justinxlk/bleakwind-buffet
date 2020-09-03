@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BleakwindBuffet.Data.Drink_Classes
+namespace BleakwindBuffet.Data.Drinks
 {
-    class Aretino_Apple_Juice
+    class Warrior_Water
     {
         public BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
 
-        private bool ice = false;
+        private bool ice = true;
         public bool Ice
         {
             get
@@ -17,20 +17,39 @@ namespace BleakwindBuffet.Data.Drink_Classes
             }
             set
             {
-                if (value) specialInstructions.Add("Add ice");
-                else specialInstructions.Remove("Add ice");
+                if (!value) specialInstructions.Add("Hold ice");
+                else specialInstructions.Remove("Hold ice");
                 ice = value;
             }
         }
+
+
+
+        private bool lemon = false;
+        public bool Lemon
+        {
+            get
+            {
+                return lemon;
+            }
+            set
+            {
+                if (value) specialInstructions.Add("Add lemon");
+                else specialInstructions.Remove("Add lemon");
+                ice = value;
+            }
+        }
+
+
 
 
         public double Price
         {
             get
             {
-                if (Size == Enums.Size.Small) return 0.62;
-                if (Size == Enums.Size.Medium) return 0.87;
-                if (Size == Enums.Size.Large) return 1.01;
+                if (Size == Enums.Size.Small) return 0;
+                if (Size == Enums.Size.Medium) return 0;
+                if (Size == Enums.Size.Large) return 0;
                 throw new NotImplementedException("Unknown size of {Size}");
             }
         }
@@ -39,9 +58,9 @@ namespace BleakwindBuffet.Data.Drink_Classes
         {
             get
             {
-                if (Size == Enums.Size.Small) return 44;
-                if (Size == Enums.Size.Medium) return 88;
-                if (Size == Enums.Size.Large) return 132;
+                if (Size == Enums.Size.Small) return 0;
+                if (Size == Enums.Size.Medium) return 0;
+                if (Size == Enums.Size.Large) return 0;
                 throw new NotImplementedException("Unknown size of {Size}");
             }
         }
@@ -60,7 +79,7 @@ namespace BleakwindBuffet.Data.Drink_Classes
 
         public override string ToString()
         {
-            return "{Size} Aretino Apple Juice";
+            return "{Size} Warrior Water";
         }
     }
 }

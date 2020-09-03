@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BleakwindBuffet.Data.Enums;
 
-namespace BleakwindBuffet.Data.Drink_Classes
+namespace BleakwindBuffet.Data.Drinks
 {
-    class Warrior_Water
+    class Sailor_s_Soda
     {
+
         public BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
 
         private bool ice = true;
@@ -24,32 +26,13 @@ namespace BleakwindBuffet.Data.Drink_Classes
         }
 
 
-
-        private bool lemon = false;
-        public bool Lemon
-        {
-            get
-            {
-                return lemon;
-            }
-            set
-            {
-                if (value) specialInstructions.Add("Add lemon");
-                else specialInstructions.Remove("Add lemon");
-                ice = value;
-            }
-        }
-
-
-
-
         public double Price
         {
             get
             {
-                if (Size == Enums.Size.Small) return 0;
-                if (Size == Enums.Size.Medium) return 0;
-                if (Size == Enums.Size.Large) return 0;
+                if (Size == Enums.Size.Small) return 1.42;
+                if (Size == Enums.Size.Medium) return 1.74;
+                if (Size == Enums.Size.Large) return 2.07;
                 throw new NotImplementedException("Unknown size of {Size}");
             }
         }
@@ -58,9 +41,9 @@ namespace BleakwindBuffet.Data.Drink_Classes
         {
             get
             {
-                if (Size == Enums.Size.Small) return 0;
-                if (Size == Enums.Size.Medium) return 0;
-                if (Size == Enums.Size.Large) return 0;
+                if (Size == Enums.Size.Small) return 117;
+                if (Size == Enums.Size.Medium) return 153;
+                if (Size == Enums.Size.Large) return 205;
                 throw new NotImplementedException("Unknown size of {Size}");
             }
         }
@@ -74,12 +57,13 @@ namespace BleakwindBuffet.Data.Drink_Classes
             get => new List<string>(specialInstructions);
         }
 
-        //public BleakwindBuffet.Data.Enums.SodaFlavor Flavor { get; set; } = Enums.SodaFlavor.Cherry;
+        public BleakwindBuffet.Data.Enums.SodaFlavor Flavor { get; set; } = BleakwindBuffet.Data.Enums.SodaFlavor.Cherry;
 
 
         public override string ToString()
         {
-            return "{Size} Warrior Water";
+            return "{Size} {Flavor} Sailor Soda";
         }
+
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BleakwindBuffet.Data.Drink_Classes
+namespace BleakwindBuffet.Data.Drinks
 {
     class Markarth_Milk
     {
