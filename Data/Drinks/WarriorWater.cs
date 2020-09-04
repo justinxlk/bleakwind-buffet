@@ -79,7 +79,7 @@ namespace BleakwindBuffet.Data.Drinks
 
         public override string ToString()
         {
-            return "{Size} Warrior Water";
+            return $"{Size} Warrior Water";
         }
     }
 }

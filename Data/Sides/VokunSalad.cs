@@ -56,7 +56,7 @@ namespace BleakwindBuffet.Data.Sides
 
         public override string ToString()
         {
-            return "{Size} Vokun Salad";
+            return $"{Size} Vokun Salad";
         }
 
     }

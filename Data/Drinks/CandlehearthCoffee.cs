@@ -95,11 +95,11 @@ namespace BleakwindBuffet.Data.Drinks
         {
             if (Decaf == false)
             {
-                return "{Size} Candlehearth Coffee";
+                return $"{Size} Candlehearth Coffee";
             }
             else
             {
-                return "{Size} Decaf Candlehearth Coffee";
+                return $"{Size} Decaf Candlehearth Coffee";
             }
         }
 

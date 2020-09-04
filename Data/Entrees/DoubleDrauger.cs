@@ -166,7 +166,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
+        public override string ToString()
+        {
+            return "Double Drauger";
+        }
 
 
     }
