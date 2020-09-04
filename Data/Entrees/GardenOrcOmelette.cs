@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Entrees
+namespace BleakwindBuffet.Data.Entrees
 {
-    class Garden_Orc_Omelette
+    public class GardenOrcOmelette
     {
         /// <summary>
         /// sets the price

@@ -5,7 +5,7 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    class Aretino_Apple_Juice
+    public class AretinoAppleJuice
     {
         public BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
 

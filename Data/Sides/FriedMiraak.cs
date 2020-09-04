@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    class Fried_Miraak
+    public class FriedMiraak
     {
         public BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
 

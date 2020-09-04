@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    class Dragonborn_Waffle_Fries
+    public class DragonbornWaffleFries
     {
         public BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
 

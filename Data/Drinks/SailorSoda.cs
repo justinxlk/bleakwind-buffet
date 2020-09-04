@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
+using SodaFlavor = BleakwindBuffet.Data.Enums.SodaFlavor;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    class Sailor_s_Soda
+    public class SailorSoda
     {
 
         public BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;

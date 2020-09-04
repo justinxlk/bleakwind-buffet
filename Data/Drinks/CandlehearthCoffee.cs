@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    class Candlehearth_Coffee
+    public class CandlehearthCoffee
     {
         public BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
 

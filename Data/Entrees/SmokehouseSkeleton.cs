@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Entrees
+namespace BleakwindBuffet.Data.Entrees
 {
-    class Smokehouse_Skeleton
+    public class SmokehouseSkeleton
     {
         /// <summary>
         /// sets the price

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Entrees
+namespace BleakwindBuffet.Data.Entrees
 {
-    class Philly_Poacher
+    public class PhillyPoacher
     {
         /// <summary>
         /// sets the price

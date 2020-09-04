@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Entrees
+namespace BleakwindBuffet.Data.Entrees
 {
-    class Thalmor_Triple
+    public class ThalmorTriple
     {
         /// <summary>
         /// sets the price
