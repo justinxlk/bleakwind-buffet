@@ -1,9 +1,18 @@
-﻿using System;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: BriarheartBurger.cs
+ * Purpose: Stores all of the information and options for an order of the Briarheart Burger
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// Class for Briarheart Burger
+    /// </summary>
     public class BriarheartBurger
     {
         private double price1 = 6.32;
@@ -22,7 +31,9 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public uint Calories => 743;
 
-
+        /// <summary>
+        /// Gets and sets if there is ketchup. Initializes to true.
+        /// </summary>
         private bool ketchup = true;
         public bool Ketchup
         {
@@ -38,7 +49,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
+        /// <summary>
+        /// Gets and sets if there is mustard. Initializes to true.
+        /// </summary>
         private bool mustard = true;
         public bool Mustard
         {
@@ -54,8 +67,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
-
+        /// <summary>
+        /// Gets and sets if there is a bun. Initializes to true.
+        /// </summary>
         private bool bun = true;
         public bool Bun
         {
@@ -71,8 +85,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
-
+        /// <summary>
+        /// Gets and sets if there are pickles. Initializes to true.
+        /// </summary>
         private bool pickle = true;
         public bool Pickle
         {
@@ -88,9 +103,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
-
-
+        /// <summary>
+        /// Gets and sets if there is cheese. Initializes to true.
+        /// </summary>
         private bool cheese = true;
         public bool Cheese
         {
@@ -106,32 +121,19 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
-
-        //public bool Bun { get; set; } = true; //technically the same as ketchup
-
-        //private bool mustard = true;
-
-        //public bool Mustard
-        //{
-        //    get => mustard;
-        //    set => mustard = value;
-        //}
-
-
+        /// <summary>
+        /// Gets the special instructions in a list of strings. Initializes an empty list of strings.
+        /// </summary>
         private List<string> specialInstructions = new List<string>();
-
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
-            // get {
-            //      List<string> instructions = new List<string>();
-            //      if(!Bun) instructions.Add("Hold bun");
-            //      if(!Ketchup) instructions.Add("Hold Ketchup");
-            //      return instructions;
-            // }
         }
 
+        /// <summary>
+        /// Overrides ToString
+        /// </summary>
+        /// <returns>Briarheart Burger</returns>
         public override string ToString()
         {
             return "Briarheart Burger";

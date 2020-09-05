@@ -1,14 +1,29 @@
-﻿using System;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: AretinoAppleJuice.cs
+ * Purpose: Stores all of the information and options for an order of Aretino Apple Juice
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// Class for AretinoAppleJuice.
+    /// </summary>
     public class AretinoAppleJuice
     {
+        /// <summary>
+        /// Gets and sets the size.  Initializes the size to small.
+        /// </summary>
         public BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
 
+        /// <summary>
+        /// Gets and sets if there is ice.  Initializes to false.
+        /// </summary>
         private bool ice = false;
         public bool Ice
         {
@@ -24,7 +39,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-
+        /// <summary>
+        /// Gets the Price dependent upon the size.
+        /// </summary>
         public double Price
         {
             get
@@ -36,6 +53,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// Gets the Calories dependent upon the size.
+        /// </summary>
         public uint Calories
         {
             get
@@ -48,17 +68,19 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
 
-
+        /// <summary>
+        /// Gets the special instructions in a list of strings. Initializes an empty list of strings.
+        /// </summary>
         private List<string> specialInstructions = new List<string>();
-
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
-        //public BleakwindBuffet.Data.Enums.SodaFlavor Flavor { get; set; } = Enums.SodaFlavor.Cherry;
-
-
+        /// <summary>
+        /// Overrides ToString
+        /// </summary>
+        /// <returns>The size followed by "Aretino Apple Juice"</returns>
         public override string ToString()
         {
             return $"{Size} Aretino Apple Juice";

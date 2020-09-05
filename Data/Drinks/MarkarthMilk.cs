@@ -1,13 +1,28 @@
-﻿using System;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: MarkarthMilk.cs
+ * Purpose: Stores all of the information and options for an order of Markarth Milk
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// the class for Markarth Milk
+    /// </summary>
     public class MarkarthMilk
     {
+        /// <summary>
+        /// Gets and sets the size.  Initializes the size to small.
+        /// </summary>
         public BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
 
+        /// <summary>
+        /// Gets and sets if there is ice.  Initializes to false.
+        /// </summary>
         private bool ice = false;
         public bool Ice
         {
@@ -23,7 +38,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-
+        /// <summary>
+        /// Gets the price based upon the size.
+        /// </summary>
         public double Price
         {
             get
@@ -35,6 +52,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// Gets the Calories based upon the size.
+        /// </summary>
         public uint Calories
         {
             get
@@ -46,18 +66,19 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-
-
+        /// <summary>
+        /// Gets the special instructions in a list of strings. Initializes an empty list of strings.
+        /// </summary>
         private List<string> specialInstructions = new List<string>();
-
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
-        //public BleakwindBuffet.Data.Enums.SodaFlavor Flavor { get; set; } = Enums.SodaFlavor.Cherry;
-
-
+        /// <summary>
+        /// Overrides ToString
+        /// </summary>
+        /// <returns>The size followed by "Markarth Milk"</returns>
         public override string ToString()
         {
             return $"{Size} Markarth Milk";

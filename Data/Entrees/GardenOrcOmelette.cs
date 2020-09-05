@@ -1,18 +1,27 @@
-﻿using System;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: GardenOrcOmelette.cs
+ * Purpose: Stores all of the information and options for an order of the Garden Orc Omelette
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// Class for Garden Orc Omelette
+    /// </summary>
     public class GardenOrcOmelette
     {
         /// <summary>
-        /// sets the price
+        /// The price
         /// </summary>
         public double Price => 4.57;
 
         /// <summary>
-        /// sets the calories
+        /// The calories
         /// </summary>
         public uint Calories => 404;
 
@@ -20,15 +29,16 @@ namespace BleakwindBuffet.Data.Entrees
 
         private List<string> specialInstructions = new List<string>();
         /// <summary>
-        /// gives the special instructions
+        /// Gets the special instructions in a list of strings. Initializes an empty list of strings.
         /// </summary>
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
-
-
+        /// <summary>
+        /// Gets and sets if there is Broccoli. Initializes to true.
+        /// </summary>
         private bool broccoli = true;
         public bool Broccoli
         {
@@ -44,8 +54,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
-
+        /// <summary>
+        /// Gets and sets if there are mushrooms. Initializes to true.
+        /// </summary>
         private bool mushrooms = true;
         public bool Mushrooms
         {
@@ -61,8 +72,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
-
+        /// <summary>
+        /// Gets and sets if there are tomatos. Initializes to true.
+        /// </summary>
         private bool tomato = true;
         public bool Tomato
         {
@@ -78,8 +90,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
-
+        /// <summary>
+        /// Gets and sets if the is cheddar. Initializes to true.
+        /// </summary>
         private bool cheddar = true;
         public bool Cheddar
         {
@@ -95,9 +108,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
-
-
+        /// <summary>
+        /// Overrides ToString
+        /// </summary>
+        /// <returns>Garden Orc Omelette</returns>
         public override string ToString()
         {
             return "Garden Orc Omelette";

@@ -1,34 +1,42 @@
-﻿using System;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: ThalmorTriple.cs
+ * Purpose: Stores all of the information and options for an order of the Thalmor Triple
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// Class for Thalmor Triple
+    /// </summary>
     public class ThalmorTriple
     {
         /// <summary>
-        /// sets the price
+        /// The price
         /// </summary>
         public double Price => 8.32;
 
         /// <summary>
-        /// sets the calories
+        /// The calories
         /// </summary>
         public uint Calories => 943;
 
-
-
-        private List<string> specialInstructions = new List<string>();
         /// <summary>
-        /// gives the special instructions
+        /// Gets the special instructions in a list of strings. Initializes an empty list of strings.
         /// </summary>
+        private List<string> specialInstructions = new List<string>();
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
-
-
+        /// <summary>
+        /// Gets and sets if there is ketchup. Initializes to true.
+        /// </summary>
         private bool ketchup = true;
         public bool Ketchup
         {
@@ -44,7 +52,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
+        /// <summary>
+        /// Gets and sets if the is mustard. Initializes to true.
+        /// </summary>
         private bool mustard = true;
         public bool Mustard
         {
@@ -60,8 +70,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
-
+        /// <summary>
+        /// Gets and sets if there is a bun. Initializes to true.
+        /// </summary>
         private bool bun = true;
         public bool Bun
         {
@@ -77,8 +88,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
-
+        /// <summary>
+        /// Gets and sets if there are pickles. Initializes to true.
+        /// </summary>
         private bool pickle = true;
         public bool Pickle
         {
@@ -94,9 +106,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
-
-
+        /// <summary>
+        /// Gets and sets if there is cheese. Initializes to true.
+        /// </summary>
         private bool cheese = true;
         public bool Cheese
         {
@@ -112,9 +124,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
-
-
+        /// <summary>
+        /// Gets and sets if there is cheese. Initializes to true.
+        /// </summary>
         private bool tomato = true;
         public bool Tomato
         {
@@ -130,9 +142,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
-
-
+        /// <summary>
+        /// Gets and sets if there is lettuce. Initializes to true.
+        /// </summary>
         private bool lettuce = true;
         public bool Lettuce
         {
@@ -148,9 +160,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
-
-
+        /// <summary>
+        /// Gets and sets if there is mayo. Initializes to true.
+        /// </summary>
         private bool mayo = true;
         public bool Mayo
         {
@@ -166,9 +178,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
-
-
+        /// <summary>
+        /// Gets and sets if there is bacon. Initializes to true.
+        /// </summary>
         private bool bacon = true;
         public bool Bacon
         {
@@ -184,8 +196,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
-
+        /// <summary>
+        /// Gets and sets if there are eggs. Initializes to true.
+        /// </summary>
         private bool egg = true;
         public bool Egg
         {
@@ -201,7 +214,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-
+        /// <summary>
+        /// Overrides ToString
+        /// </summary>
+        /// <returns>Thalmor Triple</returns>
         public override string ToString()
         {
             return "Thalmor Triple";

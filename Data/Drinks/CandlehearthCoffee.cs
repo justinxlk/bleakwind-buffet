@@ -1,13 +1,28 @@
-﻿using System;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: CandlehearthCoffee.cs
+ * Purpose: Stores all of the information and options for an order of Candlehearth Coffee
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// Class for CandleHearth Coffee
+    /// </summary>
     public class CandlehearthCoffee
     {
+        /// <summary>
+        /// Gets and sets the size.  Initializes the size to small.
+        /// </summary>
         public BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
 
+        /// <summary>
+        /// Gets and sets if there is ice.  Initializes to false.
+        /// </summary>
         private bool ice = false;
         public bool Ice
         {
@@ -23,6 +38,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// Gets and sets a bool for if there is any room for cream. Initializes to false.
+        /// </summary>
         private bool roomForCream = false;
         public bool RoomForCream
         {
@@ -38,9 +56,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-
-
-
+        /// <summary>
+        /// Gets and stes a bool for if it is decaf.  Initializes to false;
+        /// </summary>
         private bool decaf = false;
         public bool Decaf
         {
@@ -54,9 +72,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-
-
-
+        /// <summary>
+        /// Gets the price based upon the size.
+        /// </summary>
         public double Price
         {
             get
@@ -68,6 +86,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// Gets the calories dependent upon the size.
+        /// </summary>
         public uint Calories
         {
             get
@@ -79,18 +100,19 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-
-
+        /// <summary>
+        /// Gets the special instructions in a list of strings. Initializes an empty list of strings.
+        /// </summary>
         private List<string> specialInstructions = new List<string>();
-
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
-        //public BleakwindBuffet.Data.Enums.SodaFlavor Flavor { get; set; } = Enums.SodaFlavor.Cherry;
-
-
+        /// <summary>
+        /// Overrides ToString
+        /// </summary>
+        /// <returns>The size, followed by Decaf if its decaf, then Candlehearth Coffee</returns>
         public override string ToString()
         {
             if (Decaf == false)
