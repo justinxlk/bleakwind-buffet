@@ -42,6 +42,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 if (!value) specialInstructions.Add("Hold sausage");
                 else specialInstructions.Remove("Hold suasage");
+                sausageLink = value;
             }
         }
 
@@ -59,6 +60,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 if (!value) specialInstructions.Add("Hold hash browns");
                 else specialInstructions.Remove("Hold hash browns");
+                hashBrowns = value;
             }
         }
 
@@ -77,6 +79,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 if (!value) specialInstructions.Add("Hold pancakes");
                 else specialInstructions.Remove("Hold pancakes");
+                pancake = value;
             }
         }
 

@@ -36,7 +36,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 if (value) specialInstructions.Add("Add lemon");
                 else specialInstructions.Remove("Add lemon");
-                ice = value;
+                lemon = value;
             }
         }
 

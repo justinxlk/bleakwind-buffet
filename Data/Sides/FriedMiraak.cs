@@ -12,9 +12,9 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                if (Size == Enums.Size.Small) return 0.93;
-                if (Size == Enums.Size.Medium) return 1.28;
-                if (Size == Enums.Size.Large) return 1.82;
+                if (Size == Enums.Size.Small) return 1.78;
+                if (Size == Enums.Size.Medium) return 2.01;
+                if (Size == Enums.Size.Large) return 2.88;
                 throw new NotImplementedException("Unknown size of {Size}");
             }
         }
@@ -23,9 +23,9 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                if (Size == Enums.Size.Small) return 41;
-                if (Size == Enums.Size.Medium) return 52;
-                if (Size == Enums.Size.Large) return 73;
+                if (Size == Enums.Size.Small) return 151;
+                if (Size == Enums.Size.Medium) return 236;
+                if (Size == Enums.Size.Large) return 306;
                 throw new NotImplementedException("Unknown size of {Size}");
             }
         }
