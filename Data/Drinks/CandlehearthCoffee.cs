@@ -20,10 +20,11 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
 
+        
+        private bool ice = false;
         /// <summary>
         /// Gets and sets if there is ice.  Initializes to false.
         /// </summary>
-        private bool ice = false;
         public bool Ice
         {
             get
@@ -38,10 +39,11 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        
+        private bool roomForCream = false;
         /// <summary>
         /// Gets and sets a bool for if there is any room for cream. Initializes to false.
         /// </summary>
-        private bool roomForCream = false;
         public bool RoomForCream
         {
             get
@@ -56,10 +58,11 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        
+        private bool decaf = false;
         /// <summary>
         /// Gets and stes a bool for if it is decaf.  Initializes to false;
         /// </summary>
-        private bool decaf = false;
         public bool Decaf
         {
             get
@@ -100,10 +103,11 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        
+        private List<string> specialInstructions = new List<string>();
         /// <summary>
         /// Gets the special instructions in a list of strings. Initializes an empty list of strings.
         /// </summary>
-        private List<string> specialInstructions = new List<string>();
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);

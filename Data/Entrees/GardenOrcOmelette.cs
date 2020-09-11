@@ -36,10 +36,11 @@ namespace BleakwindBuffet.Data.Entrees
             get => new List<string>(specialInstructions);
         }
 
+
+        private bool broccoli = true;
         /// <summary>
         /// Gets and sets if there is Broccoli. Initializes to true.
         /// </summary>
-        private bool broccoli = true;
         public bool Broccoli
         {
             get
@@ -54,10 +55,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool mushrooms = true;
         /// <summary>
         /// Gets and sets if there are mushrooms. Initializes to true.
         /// </summary>
-        private bool mushrooms = true;
         public bool Mushrooms
         {
             get
@@ -72,10 +74,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool tomato = true;
         /// <summary>
         /// Gets and sets if there are tomatos. Initializes to true.
         /// </summary>
-        private bool tomato = true;
         public bool Tomato
         {
             get
@@ -90,10 +93,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool cheddar = true;
         /// <summary>
         /// Gets and sets if the is cheddar. Initializes to true.
         /// </summary>
-        private bool cheddar = true;
         public bool Cheddar
         {
             get

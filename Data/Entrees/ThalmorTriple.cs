@@ -25,19 +25,21 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public uint Calories => 943;
 
+
+        private List<string> specialInstructions = new List<string>();
         /// <summary>
         /// Gets the special instructions in a list of strings. Initializes an empty list of strings.
         /// </summary>
-        private List<string> specialInstructions = new List<string>();
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
+
+        private bool ketchup = true;
         /// <summary>
         /// Gets and sets if there is ketchup. Initializes to true.
         /// </summary>
-        private bool ketchup = true;
         public bool Ketchup
         {
             get
@@ -52,10 +54,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool mustard = true;
         /// <summary>
         /// Gets and sets if the is mustard. Initializes to true.
         /// </summary>
-        private bool mustard = true;
         public bool Mustard
         {
             get
@@ -70,10 +73,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool bun = true;
         /// <summary>
         /// Gets and sets if there is a bun. Initializes to true.
         /// </summary>
-        private bool bun = true;
         public bool Bun
         {
             get
@@ -88,10 +92,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool pickle = true;
         /// <summary>
         /// Gets and sets if there are pickles. Initializes to true.
         /// </summary>
-        private bool pickle = true;
         public bool Pickle
         {
             get
@@ -106,10 +111,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool cheese = true;
         /// <summary>
         /// Gets and sets if there is cheese. Initializes to true.
         /// </summary>
-        private bool cheese = true;
         public bool Cheese
         {
             get
@@ -124,10 +130,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool tomato = true;
         /// <summary>
         /// Gets and sets if there is cheese. Initializes to true.
         /// </summary>
-        private bool tomato = true;
         public bool Tomato
         {
             get
@@ -142,10 +149,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool lettuce = true;
         /// <summary>
         /// Gets and sets if there is lettuce. Initializes to true.
         /// </summary>
-        private bool lettuce = true;
         public bool Lettuce
         {
             get
@@ -160,10 +168,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool mayo = true;
         /// <summary>
         /// Gets and sets if there is mayo. Initializes to true.
         /// </summary>
-        private bool mayo = true;
         public bool Mayo
         {
             get
@@ -178,10 +187,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool bacon = true;
         /// <summary>
         /// Gets and sets if there is bacon. Initializes to true.
         /// </summary>
-        private bool bacon = true;
         public bool Bacon
         {
             get
@@ -196,10 +206,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool egg = true;
         /// <summary>
         /// Gets and sets if there are eggs. Initializes to true.
         /// </summary>
-        private bool egg = true;
         public bool Egg
         {
             get
@@ -208,8 +219,8 @@ namespace BleakwindBuffet.Data.Entrees
             }
             set
             {
-                if (!value) specialInstructions.Add("Hold eggs");
-                else specialInstructions.Remove("Hold eggs");
+                if (!value) specialInstructions.Add("Hold egg");
+                else specialInstructions.Remove("Hold egg");
                 egg = value;
             }
         }

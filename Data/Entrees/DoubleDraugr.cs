@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Class for Double Drauger
     /// </summary>
-    public class DoubleDrauger
+    public class DoubleDraugr
     {
         /// <summary>
         /// The price
@@ -26,19 +26,21 @@ namespace BleakwindBuffet.Data.Entrees
         public uint Calories => 843;
 
 
+        
+        private List<string> specialInstructions = new List<string>();
         /// <summary>
         /// Gets the special instructions in a list of strings. Initializes an empty list of strings.
         /// </summary>
-        private List<string> specialInstructions = new List<string>();
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
+        
+        private bool ketchup = true;
         /// <summary>
         /// Gets and sets if there is ketchup. Initializes to true.
         /// </summary>
-        private bool ketchup = true;
         public bool Ketchup
         {
             get
@@ -53,10 +55,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool mustard = true;
         /// <summary>
         /// Gets and sets if there is mustard. Initializes to true.
         /// </summary>
-        private bool mustard = true;
         public bool Mustard
         {
             get
@@ -71,10 +74,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool bun = true;
         /// <summary>
         /// Gets and sets if there is a bun. Initializes to true.
         /// </summary>
-        private bool bun = true;
         public bool Bun
         {
             get
@@ -89,10 +93,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool pickle = true;
         /// <summary>
         /// Gets and sets if there are pickles. Initializes to true.
         /// </summary>
-        private bool pickle = true;
         public bool Pickle
         {
             get
@@ -107,10 +112,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool cheese = true;
         /// <summary>
         /// Gets and sets if there is cheese. Initializes to true.
         /// </summary>
-        private bool cheese = true;
         public bool Cheese
         {
             get
@@ -125,10 +131,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool tomato = true;
         /// <summary>
         /// Gets and sets if there are tomatos. Initializes to true.
         /// </summary>
-        private bool tomato = true;
         public bool Tomato
         {
             get
@@ -143,10 +150,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool lettuce = true;
         /// <summary>
         /// Gets and sets if there is lettuce. Initializes to true.
         /// </summary>
-        private bool lettuce = true;
         public bool Lettuce
         {
             get
@@ -161,10 +169,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool mayo = true;
         /// <summary>
         /// Gets and sets if there is mayo. Initializes to true.
         /// </summary>
-        private bool mayo = true;
         public bool Mayo
         {
             get
@@ -185,7 +194,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <returns>Double Drauger</returns>
         public override string ToString()
         {
-            return "Double Drauger";
+            return "Double Draugr";
         }
 
 

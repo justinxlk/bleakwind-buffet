@@ -31,10 +31,11 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public uint Calories => 743;
 
+        
+        private bool ketchup = true;
         /// <summary>
         /// Gets and sets if there is ketchup. Initializes to true.
         /// </summary>
-        private bool ketchup = true;
         public bool Ketchup
         {
             get
@@ -49,10 +50,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        
+        private bool mustard = true;
         /// <summary>
         /// Gets and sets if there is mustard. Initializes to true.
         /// </summary>
-        private bool mustard = true;
         public bool Mustard
         {
             get
@@ -67,10 +69,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        
+        private bool bun = true;
         /// <summary>
         /// Gets and sets if there is a bun. Initializes to true.
         /// </summary>
-        private bool bun = true;
         public bool Bun
         {
             get
@@ -85,10 +88,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        
+        private bool pickle = true;
         /// <summary>
         /// Gets and sets if there are pickles. Initializes to true.
         /// </summary>
-        private bool pickle = true;
         public bool Pickle
         {
             get
@@ -103,10 +107,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        
+        private bool cheese = true;
         /// <summary>
         /// Gets and sets if there is cheese. Initializes to true.
         /// </summary>
-        private bool cheese = true;
         public bool Cheese
         {
             get
@@ -121,10 +126,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        
+        private List<string> specialInstructions = new List<string>();
         /// <summary>
         /// Gets the special instructions in a list of strings. Initializes an empty list of strings.
         /// </summary>
-        private List<string> specialInstructions = new List<string>();
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);

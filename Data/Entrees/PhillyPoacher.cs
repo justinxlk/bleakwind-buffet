@@ -36,10 +36,11 @@ namespace BleakwindBuffet.Data.Entrees
             get => new List<string>(specialInstructions);
         }
 
+
+        private bool sirloin = true;
         /// <summary>
         /// Gets and sets if there is sirloin. Initializes to true.
         /// </summary>
-        private bool sirloin = true;
         public bool Sirloin
         {
             get
@@ -54,10 +55,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool onion = true;
         /// <summary>
         /// Gets and sets if there are onions. Initializes to true.
         /// </summary>
-        private bool onion = true;
         public bool Onion
         {
             get
@@ -66,16 +68,17 @@ namespace BleakwindBuffet.Data.Entrees
             }
             set
             {
-                if (!value) specialInstructions.Add("Hold onion");
-                else specialInstructions.Remove("Hold onion");
+                if (!value) specialInstructions.Add("Hold onions");
+                else specialInstructions.Remove("Hold onions");
                 onion = value;
             }
         }
 
+
+        private bool roll = true;
         /// <summary>
         /// Gets and sets if there are rolls. Initializes to true.
         /// </summary>
-        private bool roll = true;
         public bool Roll
         {
             get

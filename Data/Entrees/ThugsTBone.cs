@@ -25,10 +25,11 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public uint Calories => 982;
 
+
+        private List<string> specialInstructions = new List<string>();
         /// <summary>
         /// Gets the special instructions in a list of strings. Initializes an empty list of strings.
         /// </summary>
-        private List<string> specialInstructions = new List<string>();
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);

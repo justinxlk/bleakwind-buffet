@@ -24,19 +24,21 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public uint Calories => 602;
 
+
+        private List<string> specialInstructions = new List<string>();
         /// <summary>
         /// Gets the special instructions in a list of strings. Initializes an empty list of strings.
         /// </summary>
-        private List<string> specialInstructions = new List<string>();
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
+
+        private bool sausageLink = true;
         /// <summary>
         /// Gets and sets if there are sausage links. Initializes to true.
         /// </summary>
-        private bool sausageLink = true;
         public bool SausageLink
         {
             get
@@ -51,10 +53,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool hashBrowns = true;
         /// <summary>
         /// Gets and sets if there are hash browns. Initializes to true.
         /// </summary>
-        private bool hashBrowns = true;
         public bool HashBrowns
         {
             get
@@ -69,10 +72,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool pancake = true;
         /// <summary>
         /// Gets and sets if there are panckaes. Initializes to true.
         /// </summary>
-        private bool pancake = true;
         public bool Pancake
         {
             get
@@ -87,10 +91,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool egg = true;
         /// <summary>
         /// Gets and sets if there are eggs. Initializes to true.
         /// </summary>
-        private bool egg = true;
         public bool Egg
         {
             get
