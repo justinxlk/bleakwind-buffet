@@ -200,7 +200,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ShouldReturnCorrectToString()
         {
             DoubleDraugr dd = new DoubleDraugr();
-            Assert.Equal("Double Drauger", dd.ToString());
+            Assert.Equal("Double Draugr", dd.ToString());
         }
     }
 }

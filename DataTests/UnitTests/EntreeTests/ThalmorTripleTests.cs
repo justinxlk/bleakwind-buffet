@@ -233,8 +233,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             if (includeBacon == false) Assert.Contains("Hold bacon", tt.SpecialInstructions);
             else Assert.DoesNotContain("Hold bacon", tt.SpecialInstructions);
             tt.Egg = includeEgg;
-            if (includeEgg == false) Assert.Contains("Hold eggs", tt.SpecialInstructions);
-            else Assert.DoesNotContain("Hold eggs", tt.SpecialInstructions);
+            if (includeEgg == false) Assert.Contains("Hold egg", tt.SpecialInstructions);
+            else Assert.DoesNotContain("Hold egg", tt.SpecialInstructions);
         }
 
         [Fact]
