@@ -13,17 +13,17 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// Class for Mad Otar Grits
     /// </summary>
-    public class MadOtarGrits
+    public class MadOtarGrits : Side 
     {
         /// <summary>
         /// Gets and sets the size. Initializes to Small.
         /// </summary>
-        public BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
+        public override BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
 
         /// <summary>
         /// Gets the price depending upon the size.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -37,7 +37,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// Gets the calories depending upon the size.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -53,7 +53,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// Gets the special instructions in a list of strings. Initializes an empty list of strings.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }

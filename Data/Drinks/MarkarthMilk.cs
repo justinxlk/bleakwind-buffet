@@ -13,12 +13,12 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// the class for Markarth Milk
     /// </summary>
-    public class MarkarthMilk
+    public class MarkarthMilk : Drink
     {
         /// <summary>
         /// Gets and sets the size.  Initializes the size to small.
         /// </summary>
-        public BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
+        //public override BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
 
         
         private bool ice = false;
@@ -42,7 +42,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the price based upon the size.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -56,7 +56,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the Calories based upon the size.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -72,7 +72,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the special instructions in a list of strings. Initializes an empty list of strings.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }

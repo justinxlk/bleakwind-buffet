@@ -13,13 +13,13 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Class for Briarheart Burger
     /// </summary>
-    public class BriarheartBurger
+    public class BriarheartBurger : Entree
     {
         private double price1 = 6.32;
         /// <summary>
         /// gets the price of the burger
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return price1; }
             //get => 6.32;
@@ -29,7 +29,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// gets the calories of the burger
         /// </summary>
-        public uint Calories => 743;
+        public override uint Calories => 743;
 
         
         private bool ketchup = true;
@@ -131,7 +131,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Gets the special instructions in a list of strings. Initializes an empty list of strings.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }

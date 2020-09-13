@@ -13,24 +13,24 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Class for Thug's T-Bone
     /// </summary>
-    public class ThugsTBone
+    public class ThugsTBone : Entree
     {
         /// <summary>
         /// The price
         /// </summary>
-        public double Price => 6.44;
+        public override double Price => 6.44;
 
         /// <summary>
         /// The calories
         /// </summary>
-        public uint Calories => 982;
+        public override uint Calories => 982;
 
 
         private List<string> specialInstructions = new List<string>();
         /// <summary>
         /// Gets the special instructions in a list of strings. Initializes an empty list of strings.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
