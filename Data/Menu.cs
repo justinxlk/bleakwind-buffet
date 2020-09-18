@@ -105,9 +105,9 @@ namespace BleakwindBuffet.Data
         public static IEnumerable<IOrderItem> FullMenu()
         {
             List<IOrderItem> all = new List<IOrderItem>();
-            all.Add((IOrderItem)Entrees());
-            all.Add((IOrderItem)Sides());
-            all.Add((IOrderItem)Drinks());
+            all.AddRange(Entrees());
+            all.AddRange(Sides());
+            all.AddRange(Drinks());
             IEnumerable<IOrderItem> all2 = all;
             return all2;
         }

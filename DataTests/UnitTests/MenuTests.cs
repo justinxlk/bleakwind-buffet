@@ -74,9 +74,37 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [InlineData(Size.Large)]
         public void ContainsAllItems(Size size)
         {
-            ContainsAllEntrees();
-            ContainsAllSides(size);
-            ContainsAllDrinks(size);
+            IEnumerable<IOrderItem> fullMenu = Menu.FullMenu();
+            foreach (Drink drink in Menu.Drinks())
+            {
+                drink.Size = size;
+                Assert.Contains(fullMenu, (item) => { return item.ToString().Equals($"{size} Aretino Apple Juice"); });
+                Assert.Contains(fullMenu, (item) => { return item.ToString().Equals($"{size} Candlehearth Coffee"); });
+                Assert.Contains(fullMenu, (item) => { return item.ToString().Equals($"{size} Markarth Milk"); });
+                Assert.Contains(fullMenu, (item) => { return item.ToString().Equals($"{size} Warrior Water"); });
+                foreach (SodaFlavor flavor in Enum.GetValues(typeof(SodaFlavor)))
+                {
+                    Assert.Contains(fullMenu, (item) => { return item.ToString().Equals($"{size} {flavor} Sailor Soda"); });
+                }
+            }
+
+            foreach (Side side in Menu.Sides())
+            {
+                side.Size = size;
+                Assert.Contains(fullMenu, (item) => { return item.ToString().Equals($"{size} Dragonborn Waffle Fries"); });
+                Assert.Contains(fullMenu, (item) => { return item.ToString().Equals($"{size} Fried Miraak"); });
+                Assert.Contains(fullMenu, (item) => { return item.ToString().Equals($"{size} Mad Otar Grits"); });
+                Assert.Contains(fullMenu, (item) => { return item.ToString().Equals($"{size} Vokun Salad"); });
+            }
+
+            Assert.Contains(fullMenu, (item) => { return item is BriarheartBurger; });
+            Assert.Contains(fullMenu, (item) => { return item is DoubleDraugr; });
+            Assert.Contains(fullMenu, (item) => { return item is GardenOrcOmelette; });
+            Assert.Contains(fullMenu, (item) => { return item is PhillyPoacher; });
+            Assert.Contains(fullMenu, (item) => { return item is SmokehouseSkeleton; });
+            Assert.Contains(fullMenu, (item) => { return item is ThalmorTriple; });
+            Assert.Contains(fullMenu, (item) => { return item is ThugsTBone; });
+
         }
     }
 }
