@@ -11,7 +11,7 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition Width="175"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -21,6 +21,6 @@
         <Border Name="bigBorder" Grid.Column="99" Grid.Row="0"></Border>
         <Button Name="buttonCancel" Grid.Column="0" Grid.Row="99" FontSize="30" Click="ClickCancel">Cancel</Button>
         <Button Name="buttonEnter" Grid.Column="2" Grid.Row="99" FontSize="30" Click="ClickDone">Done</Button>
-        <Button Name="buttonCheckOut" Grid.Column="99" Grid.Row="99" FontSize="30">Check Out</Button>
+        <Button Name="buttonCheckOut" Grid.Column="99" Grid.Row="99" FontSize="30" Click="ClickDone">Check Out</Button>
     </Grid>
 </Window>

@@ -7,14 +7,18 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// Class for Briarheart Burger
     /// </summary>
-    public class BriarheartBurger : Entree
+    public class BriarheartBurger : Entree , INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private double price1 = 6.32;
         /// <summary>
         /// gets the price of the burger
@@ -34,7 +38,7 @@ namespace BleakwindBuffet.Data.Entrees
         
         private bool ketchup = true;
         /// <summary>
-        /// Gets and sets if there is ketchup. Initializes to true.
+        /// Gets and sets if there is ketchup. Initializes to true.   Updates ui to match property changes
         /// </summary>
         public bool Ketchup
         {
@@ -47,13 +51,14 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold ketchup");
                 else specialInstructions.Remove("Hold ketchup");
                 ketchup = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
             }
         }
 
         
         private bool mustard = true;
         /// <summary>
-        /// Gets and sets if there is mustard. Initializes to true.
+        /// Gets and sets if there is mustard. Initializes to true.   Updates ui to match property changes
         /// </summary>
         public bool Mustard
         {
@@ -66,13 +71,14 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold mustard");
                 else specialInstructions.Remove("Hold mustard");
                 mustard = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
             }
         }
 
         
         private bool bun = true;
         /// <summary>
-        /// Gets and sets if there is a bun. Initializes to true.
+        /// Gets and sets if there is a bun. Initializes to true.   Updates ui to match property changes
         /// </summary>
         public bool Bun
         {
@@ -85,13 +91,14 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold bun");
                 else specialInstructions.Remove("Hold bun");
                 bun = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
             }
         }
 
         
         private bool pickle = true;
         /// <summary>
-        /// Gets and sets if there are pickles. Initializes to true.
+        /// Gets and sets if there are pickles. Initializes to true.   Updates ui to match property changes
         /// </summary>
         public bool Pickle
         {
@@ -104,13 +111,14 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold pickle");
                 else specialInstructions.Remove("Hold pickle");
                 pickle = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
             }
         }
 
         
         private bool cheese = true;
         /// <summary>
-        /// Gets and sets if there is cheese. Initializes to true.
+        /// Gets and sets if there is cheese. Initializes to true.   Updates ui to match property changes
         /// </summary>
         public bool Cheese
         {
@@ -123,13 +131,14 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold cheese");
                 else specialInstructions.Remove("Hold cheese");
                 cheese = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
             }
         }
 
         
         private List<string> specialInstructions = new List<string>();
         /// <summary>
-        /// Gets the special instructions in a list of strings. Initializes an empty list of strings.
+        /// Gets the special instructions in a list of strings. Initializes an empty list of strings.   
         /// </summary>
         public override List<string> SpecialInstructions
         {

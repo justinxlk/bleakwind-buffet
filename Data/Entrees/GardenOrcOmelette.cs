@@ -7,14 +7,18 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// Class for Garden Orc Omelette
     /// </summary>
-    public class GardenOrcOmelette : Entree
+    public class GardenOrcOmelette : Entree , INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// The price
         /// </summary>
@@ -39,7 +43,7 @@ namespace BleakwindBuffet.Data.Entrees
 
         private bool broccoli = true;
         /// <summary>
-        /// Gets and sets if there is Broccoli. Initializes to true.
+        /// Gets and sets if there is Broccoli. Initializes to true.   Updates ui to match property changes
         /// </summary>
         public bool Broccoli
         {
@@ -52,13 +56,14 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold broccoli");
                 else specialInstructions.Remove("Hold broccoli");
                 broccoli = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Broccoli"));
             }
         }
 
 
         private bool mushrooms = true;
         /// <summary>
-        /// Gets and sets if there are mushrooms. Initializes to true.
+        /// Gets and sets if there are mushrooms. Initializes to true.   Updates ui to match property changes
         /// </summary>
         public bool Mushrooms
         {
@@ -71,13 +76,14 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold mushrooms");
                 else specialInstructions.Remove("Hold mushrooms");
                 mushrooms = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mushrooms"));
             }
         }
 
 
         private bool tomato = true;
         /// <summary>
-        /// Gets and sets if there are tomatos. Initializes to true.
+        /// Gets and sets if there are tomatos. Initializes to true.   Updates ui to match property changes
         /// </summary>
         public bool Tomato
         {
@@ -90,13 +96,14 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold tomato");
                 else specialInstructions.Remove("Hold tomato");
                 tomato = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
             }
         }
 
 
         private bool cheddar = true;
         /// <summary>
-        /// Gets and sets if the is cheddar. Initializes to true.
+        /// Gets and sets if the is cheddar. Initializes to true.   Updates ui to match property changes
         /// </summary>
         public bool Cheddar
         {
@@ -109,6 +116,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold cheddar");
                 else specialInstructions.Remove("Hold cheddar");
                 cheddar = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheddar"));
             }
         }
 

@@ -23,10 +23,10 @@
         <Button Grid.Column="0" Grid.Row="2" FontSize="30" Click="ClickCancel">Cancel</Button>
 
         <StackPanel Grid.Row="1" Grid.ColumnSpan="3">
-            <CheckBox FontSize="25" IsChecked="True" BorderThickness="10">Sausage Link</CheckBox>
-            <CheckBox FontSize="25" IsChecked="True" BorderThickness="10">Egg</CheckBox>
-            <CheckBox FontSize="25" IsChecked="True" BorderThickness="10">Hash Browns</CheckBox>
-            <CheckBox FontSize="25" IsChecked="True" BorderThickness="10">Pancake</CheckBox>
+            <CheckBox FontSize="25" IsChecked="{Binding Path=SausageLink}" BorderThickness="10">Sausage Link</CheckBox>
+            <CheckBox FontSize="25" IsChecked="{Binding Path=Egg}" BorderThickness="10">Egg</CheckBox>
+            <CheckBox FontSize="25" IsChecked="{Binding Path=HashBrowns}" BorderThickness="10">Hash Browns</CheckBox>
+            <CheckBox FontSize="25" IsChecked="{Binding Path=Pancake}" BorderThickness="10">Pancake</CheckBox>
         </StackPanel>    
     </Grid>
 </UserControl>

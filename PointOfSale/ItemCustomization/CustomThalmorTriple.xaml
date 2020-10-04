@@ -23,16 +23,16 @@
         <Button Grid.Column="0" Grid.Row="2" FontSize="30" Click="ClickCancel">Cancel</Button>
 
         <StackPanel Grid.Row="1" Grid.ColumnSpan="3">
-            <CheckBox FontSize="23" IsChecked="True" BorderThickness="8">Bun</CheckBox>
-            <CheckBox FontSize="23" IsChecked="True" BorderThickness="8">Ketchup</CheckBox>
-            <CheckBox FontSize="23" IsChecked="True" BorderThickness="8">Mustard</CheckBox>
-            <CheckBox FontSize="23" IsChecked="True" BorderThickness="8">Pickle</CheckBox>
-            <CheckBox FontSize="23" IsChecked="True" BorderThickness="8">Cheese</CheckBox>
-            <CheckBox FontSize="23" IsChecked="True" BorderThickness="8">Tomato</CheckBox>
-            <CheckBox FontSize="23" IsChecked="True" BorderThickness="8">Lettuce</CheckBox>
-            <CheckBox FontSize="23" IsChecked="True" BorderThickness="8">Mayo</CheckBox>
-            <CheckBox FontSize="23" IsChecked="True" BorderThickness="8">Bacon</CheckBox>
-            <CheckBox FontSize="23" IsChecked="True" BorderThickness="8">Egg</CheckBox>
+            <CheckBox FontSize="23" IsChecked="{Binding Path=Bun}" BorderThickness="8">Bun</CheckBox>
+            <CheckBox FontSize="23" IsChecked="{Binding Path=Ketcup}" BorderThickness="8">Ketchup</CheckBox>
+            <CheckBox FontSize="23" IsChecked="{Binding Path=Mustard}" BorderThickness="8">Mustard</CheckBox>
+            <CheckBox FontSize="23" IsChecked="{Binding Path=Pickle}" BorderThickness="8">Pickle</CheckBox>
+            <CheckBox FontSize="23" IsChecked="{Binding Path=Cheese}" BorderThickness="8">Cheese</CheckBox>
+            <CheckBox FontSize="23" IsChecked="{Binding Path=Tomato}" BorderThickness="8">Tomato</CheckBox>
+            <CheckBox FontSize="23" IsChecked="{Binding Path=Letuce}" BorderThickness="8">Lettuce</CheckBox>
+            <CheckBox FontSize="23" IsChecked="{Binding Path=Mayo}" BorderThickness="8">Mayo</CheckBox>
+            <CheckBox FontSize="23" IsChecked="{Binding Path=Bacon}" BorderThickness="8">Bacon</CheckBox>
+            <CheckBox FontSize="23" IsChecked="{Binding Path=Egg}" BorderThickness="8">Egg</CheckBox>
         </StackPanel>
     </Grid>
 </UserControl>

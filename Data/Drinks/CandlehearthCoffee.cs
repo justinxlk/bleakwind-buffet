@@ -7,23 +7,39 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     /// <summary>
     /// Class for CandleHearth Coffee
     /// </summary>
-    public class CandlehearthCoffee : Drink
+    public class CandlehearthCoffee : Drink , INotifyPropertyChanged
     {
-        /// <summary>
-        /// Gets and sets the size.  Initializes the size to small.
-        /// </summary>
-        //public BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
 
-        
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private Enums.Size size = Enums.Size.Small;
+        /// <summary>
+        /// Gets and sets the size.  Initializes the size to small.   Updates the ui to match property changes
+        /// </summary>
+        public override BleakwindBuffet.Data.Enums.Size Size
+        {
+            get
+            {
+                return size;
+            }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
+
+
         private bool ice = false;
         /// <summary>
-        /// Gets and sets if there is ice.  Initializes to false.
+        /// Gets and sets if there is ice.  Initializes to false.   Updates the ui to match property changes.
         /// </summary>
         public bool Ice
         {
@@ -36,13 +52,14 @@ namespace BleakwindBuffet.Data.Drinks
                 if (value) specialInstructions.Add("Add ice");
                 else specialInstructions.Remove("Add ice");
                 ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
             }
         }
 
         
         private bool roomForCream = false;
         /// <summary>
-        /// Gets and sets a bool for if there is any room for cream. Initializes to false.
+        /// Gets and sets a bool for if there is any room for cream. Initializes to false.   Updates ui to match property changes
         /// </summary>
         public bool RoomForCream
         {
@@ -55,13 +72,14 @@ namespace BleakwindBuffet.Data.Drinks
                 if (value) specialInstructions.Add("Add cream");
                 else specialInstructions.Remove("Add cream");
                 roomForCream = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
             }
         }
 
         
         private bool decaf = false;
         /// <summary>
-        /// Gets and stes a bool for if it is decaf.  Initializes to false;
+        /// Gets and stes a bool for if it is decaf.  Initializes to false.   Updates ui to match property changes
         /// </summary>
         public bool Decaf
         {
@@ -72,6 +90,7 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 decaf = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
             }
         }
 

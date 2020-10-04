@@ -1,4 +1,11 @@
-﻿using BleakwindBuffet.Data.Entrees;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: CustomPhillyPoacher.xaml.cs
+ * Purpose: Code behind CustomPhillyPoacher.xaml
+ */
+
+
+using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,14 +26,21 @@ namespace PointOfSale.ItemCustomization
     /// </summary>
     public partial class CustomPhillyPoacher : UserControl
     {
-
+        /// <summary>
+        /// PhillyPoacher object to be used throughout CustomPhillyPoacher
+        /// </summary>
         PhillyPoacher ppCustom = new PhillyPoacher();
 
+        /// <summary>
+        /// Typical custructor that also links the buttons in the ui to ppCustom
+        /// </summary>
         public CustomPhillyPoacher()
         {
             InitializeComponent();
+            DataContext = ppCustom;
         }
 
+        /*
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(ppCustom);
@@ -36,5 +50,6 @@ namespace PointOfSale.ItemCustomization
         {
 
         }
+        */
     }
 }

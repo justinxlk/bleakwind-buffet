@@ -1,4 +1,11 @@
-﻿using BleakwindBuffet.Data.Entrees;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: CustomBriarheartBurger.xaml.cs
+ * Purpose: Code behind CustomBriarheartBurger.xaml
+ */
+
+
+using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,14 +26,21 @@ namespace PointOfSale.ItemCustomization
     /// </summary>
     public partial class CustomBriarheartBurger : UserControl
     {
-
+        /// <summary>
+        /// BriarheartBurger object to be used throughout CustomBriarheartBurger
+        /// </summary>
         public BriarheartBurger bbCustom = new BriarheartBurger();
 
+        /// <summary>
+        /// Typical custructor that also links the buttons in the ui to bbCustom
+        /// </summary>
         public CustomBriarheartBurger()
         {
             InitializeComponent();
+            DataContext = bbCustom;
         }
 
+        /*
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(bbCustom);
@@ -36,5 +50,6 @@ namespace PointOfSale.ItemCustomization
         {
 
         }
+        */
     }
 }

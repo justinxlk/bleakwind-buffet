@@ -7,18 +7,34 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Sides
 {
     /// <summary>
     /// Class for Fried Miraak
     /// </summary>
-    public class FriedMiraak : Side 
+    public class FriedMiraak : Side , INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private Enums.Size size = Enums.Size.Small;
         /// <summary>
-        /// Gets and sets the size.  Initializes the size to small.
+        /// Gets and sets the size.  Initializes the size to small.   Updates ui to match property changes
         /// </summary>
-        public override BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
+        public override BleakwindBuffet.Data.Enums.Size Size 
+        {
+            get
+            {
+                return size;
+            }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            } 
+        }
 
         /// <summary>
         /// Gets the price dependent uppon the size.

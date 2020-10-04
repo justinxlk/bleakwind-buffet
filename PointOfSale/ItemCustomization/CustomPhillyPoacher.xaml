@@ -23,9 +23,9 @@
         <Button Grid.Column="0" Grid.Row="2" FontSize="30" Click="ClickCancel">Cancel</Button>
 
         <StackPanel Grid.Row="1" Grid.ColumnSpan="3">
-            <CheckBox FontSize="25" IsChecked="True" BorderThickness="10">Sirloin</CheckBox>
-            <CheckBox FontSize="25" IsChecked="True" BorderThickness="10">Onion</CheckBox>
-            <CheckBox FontSize="25" IsChecked="True" BorderThickness="10">Roll</CheckBox>
+            <CheckBox FontSize="25" IsChecked="{Binding Path=Sirloin}" BorderThickness="10">Sirloin</CheckBox>
+            <CheckBox FontSize="25" IsChecked="{Binding Path=Onion}" BorderThickness="10">Onion</CheckBox>
+            <CheckBox FontSize="25" IsChecked="{Binding Path=Roll}" BorderThickness="10">Roll</CheckBox>
         </StackPanel>        
     </Grid>
 </UserControl>

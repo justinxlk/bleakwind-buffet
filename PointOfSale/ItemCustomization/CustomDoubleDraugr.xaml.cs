@@ -1,4 +1,11 @@
-﻿using BleakwindBuffet.Data.Entrees;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: CustomDoubleDraugr.xaml.cs
+ * Purpose: Code behind CustomDoubleDraugr.xaml
+ */
+
+
+using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,14 +26,21 @@ namespace PointOfSale.ItemCustomization
     /// </summary>
     public partial class CustomDoubleDraugr : UserControl
     {
-
+        /// <summary>
+        /// DoubleDraugr to be used throughout CustomDoubleDraugr
+        /// </summary>
         DoubleDraugr ddCustom = new DoubleDraugr();
 
+        /// <summary>
+        /// Typical custructor that also links the buttons in the ui to ddCustom
+        /// </summary>
         public CustomDoubleDraugr()
         {
             InitializeComponent();
+            DataContext = ddCustom;
         }
 
+        /*
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(ddCustom);
@@ -36,5 +50,6 @@ namespace PointOfSale.ItemCustomization
         {
 
         }
+        */
     }
 }

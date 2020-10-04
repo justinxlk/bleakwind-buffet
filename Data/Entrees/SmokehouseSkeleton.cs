@@ -6,14 +6,18 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// Class for Smokehouse Skeleton
     /// </summary>
-    public class SmokehouseSkeleton : Entree
+    public class SmokehouseSkeleton : Entree , INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// The price
         /// </summary>
@@ -37,7 +41,7 @@ namespace BleakwindBuffet.Data.Entrees
 
         private bool sausageLink = true;
         /// <summary>
-        /// Gets and sets if there are sausage links. Initializes to true.
+        /// Gets and sets if there are sausage links. Initializes to true.   Updates ui to match property changes
         /// </summary>
         public bool SausageLink
         {
@@ -50,13 +54,14 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold sausage");
                 else specialInstructions.Remove("Hold suasage");
                 sausageLink = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SausageLink"));
             }
         }
 
 
         private bool hashBrowns = true;
         /// <summary>
-        /// Gets and sets if there are hash browns. Initializes to true.
+        /// Gets and sets if there are hash browns. Initializes to true.   Updates ui to match property changes
         /// </summary>
         public bool HashBrowns
         {
@@ -69,13 +74,14 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold hash browns");
                 else specialInstructions.Remove("Hold hash browns");
                 hashBrowns = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HashBrowns"));
             }
         }
 
 
         private bool pancake = true;
         /// <summary>
-        /// Gets and sets if there are panckaes. Initializes to true.
+        /// Gets and sets if there are panckaes. Initializes to true.   Updates ui to match property changes
         /// </summary>
         public bool Pancake
         {
@@ -88,13 +94,14 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold pancakes");
                 else specialInstructions.Remove("Hold pancakes");
                 pancake = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pancake"));
             }
         }
 
 
         private bool egg = true;
         /// <summary>
-        /// Gets and sets if there are eggs. Initializes to true.
+        /// Gets and sets if there are eggs. Initializes to true.  Updates ui to match property changes
         /// </summary>
         public bool Egg
         {
@@ -107,6 +114,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold eggs");
                 else specialInstructions.Remove("Hold eggs");
                 egg = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Egg"));
             }
         }
 

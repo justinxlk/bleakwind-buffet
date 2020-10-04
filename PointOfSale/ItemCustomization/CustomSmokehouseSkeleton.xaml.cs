@@ -1,4 +1,11 @@
-﻿using BleakwindBuffet.Data.Entrees;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: CustomSmokehouseSkeleton.xaml.cs
+ * Purpose: Code behind CustomSmokehouseSkeleton.xaml
+ */
+
+
+using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,14 +26,21 @@ namespace PointOfSale.ItemCustomization
     /// </summary>
     public partial class CustomSmokehouseSkeleton : UserControl
     {
-
+        /// <summary>
+        /// SmokehouseSkeleton object to be used throughout CustomSmokehouseSkeleton
+        /// </summary>
         SmokehouseSkeleton ssCustom = new SmokehouseSkeleton();
 
+        /// <summary>
+        /// Typical custructor that also links the buttons in the ui to ssCustom
+        /// </summary>
         public CustomSmokehouseSkeleton()
         {
             InitializeComponent();
+            DataContext = ssCustom;
         }
 
+        /*
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(ssCustom);
@@ -36,5 +50,6 @@ namespace PointOfSale.ItemCustomization
         {
 
         }
+        */
     }
 }

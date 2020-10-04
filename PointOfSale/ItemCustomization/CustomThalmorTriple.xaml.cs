@@ -1,4 +1,11 @@
-﻿using BleakwindBuffet.Data.Entrees;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: CustomThalmorTriple.xaml.cs
+ * Purpose: Code behind CustomThalmorTriple.xaml
+ */
+
+
+using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,14 +26,21 @@ namespace PointOfSale.ItemCustomization
     /// </summary>
     public partial class CustomThalmorTriple : UserControl
     {
-
+        /// <summary>
+        /// ThalmorTriple object to be used throughout CustomThalmorTriple
+        /// </summary>
         ThalmorTriple ttCustom = new ThalmorTriple();
 
+        /// <summary>
+        /// Typical custructor that also links the buttons in the ui to ttCustom
+        /// </summary>
         public CustomThalmorTriple()
         {
             InitializeComponent();
+            DataContext = ttCustom;
         }
 
+        /*
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(ttCustom);
@@ -36,5 +50,6 @@ namespace PointOfSale.ItemCustomization
         {
 
         }
+        */
     }
 }

@@ -1,4 +1,11 @@
-﻿using BleakwindBuffet.Data.Sides;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: CustomVokunSalad.xaml.cs
+ * Purpose: Code behind CustomVokunSalad.xaml
+ */
+
+
+using BleakwindBuffet.Data.Sides;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,14 +26,21 @@ namespace PointOfSale.ItemCustomization
     /// </summary>
     public partial class CustomVokunSalad : UserControl
     {
-
+        /// <summary>
+        /// VokunSalad object to be used throughout CustomVokunSalad
+        /// </summary>
         VokunSalad vsCustom = new VokunSalad();
 
+        /// <summary>
+        /// Typical custructor that also links the buttons in the ui to vsCustom
+        /// </summary>
         public CustomVokunSalad()
         {
             InitializeComponent();
+            DataContext = vsCustom;
         }
 
+        /*
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(vsCustom);
@@ -36,5 +50,6 @@ namespace PointOfSale.ItemCustomization
         {
 
         }
+        */
     }
 }

@@ -7,23 +7,38 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     /// <summary>
     /// the class for Markarth Milk
     /// </summary>
-    public class MarkarthMilk : Drink
+    public class MarkarthMilk : Drink , INotifyPropertyChanged
     {
-        /// <summary>
-        /// Gets and sets the size.  Initializes the size to small.
-        /// </summary>
-        //public override BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
 
-        
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private Enums.Size size = Enums.Size.Small;
+        /// <summary>
+        /// Gets and sets the size.  Initializes the size to small.   Updates ui to match property changes
+        /// </summary>
+        public override BleakwindBuffet.Data.Enums.Size Size
+        {
+            get
+            {
+                return size;
+            }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
+
         private bool ice = false;
         /// <summary>
-        /// Gets and sets if there is ice.  Initializes to false.
+        /// Gets and sets if there is ice.  Initializes to false.   Updates ui to match property changes
         /// </summary>
         public bool Ice
         {
@@ -36,6 +51,7 @@ namespace BleakwindBuffet.Data.Drinks
                 if (value) specialInstructions.Add("Add ice");
                 else specialInstructions.Remove("Add ice");
                 ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
             }
         }
 

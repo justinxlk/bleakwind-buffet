@@ -7,18 +7,34 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Sides
 {
     /// <summary>
     /// Class for Dragonborn Waffle Fries
     /// </summary>
-    public class DragonbornWaffleFries : Side
+    public class DragonbornWaffleFries : Side , INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private Enums.Size size = Enums.Size.Small;
         /// <summary>
-        /// Gets and sets the size.  Initializes the size to small.
+        /// Gets and sets the size.  Initializes the size to small.  Updates ui to match property changes
         /// </summary>
-        public override BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
+        public override BleakwindBuffet.Data.Enums.Size Size 
+        {
+            get
+            {
+                return size;
+            }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
 
         /// <summary>
         /// Gets the price dependent upon the size.

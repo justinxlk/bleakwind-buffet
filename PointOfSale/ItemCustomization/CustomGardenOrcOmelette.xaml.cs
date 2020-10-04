@@ -1,4 +1,11 @@
-﻿using BleakwindBuffet.Data.Entrees;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: CustomGardenOrcOmelette.xaml.cs
+ * Purpose: Code behind CustomGardenOrcOmelette.xaml
+ */
+
+
+using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,14 +26,21 @@ namespace PointOfSale.ItemCustomization
     /// </summary>
     public partial class CustomGardenOrcOmelette : UserControl
     {
-
+        /// <summary>
+        /// GardenOrcOmelette object to be used throughout CustomGardenOrcOmelette
+        /// </summary>
         GardenOrcOmelette gooCustom = new GardenOrcOmelette();
 
+        /// <summary>
+        /// Typical custructor that also links the buttons in the ui to gooCustom
+        /// </summary>
         public CustomGardenOrcOmelette()
         {
             InitializeComponent();
+            DataContext = gooCustom;
         }
 
+        /*
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(aaCustom);
@@ -36,5 +50,6 @@ namespace PointOfSale.ItemCustomization
         {
 
         }
+        */
     }
 }

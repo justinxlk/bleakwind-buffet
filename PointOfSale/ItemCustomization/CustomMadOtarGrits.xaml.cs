@@ -1,4 +1,11 @@
-﻿using BleakwindBuffet.Data.Sides;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: CustomMadOtarGrits.xaml.cs
+ * Purpose: Code behind CustomMadOtarGrits.xaml
+ */
+
+
+using BleakwindBuffet.Data.Sides;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,14 +26,21 @@ namespace PointOfSale.ItemCustomization
     /// </summary>
     public partial class CustomMadOtarGrits : UserControl
     {
-
+        /// <summary>
+        /// MadOtarGrits object to be used thoroughout CustomMadOtarGrits
+        /// </summary>
         MadOtarGrits mogCustom = new MadOtarGrits();
 
+        /// <summary>
+        /// Typical custructor that also links the buttons in the ui to mogCustom
+        /// </summary>
         public CustomMadOtarGrits()
         {
             InitializeComponent();
+            DataContext = mogCustom;
         }
 
+        /*
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(mogCustom);
@@ -36,5 +50,6 @@ namespace PointOfSale.ItemCustomization
         {
 
         }
+        */
     }
 }

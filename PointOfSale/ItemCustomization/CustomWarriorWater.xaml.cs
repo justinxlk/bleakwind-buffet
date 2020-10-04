@@ -1,4 +1,11 @@
-﻿using BleakwindBuffet.Data.Drinks;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: CustomWarriorWater.xaml.cs
+ * Purpose: Code behind CustomWarriorWater.xaml
+ */
+
+
+using BleakwindBuffet.Data.Drinks;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,14 +26,21 @@ namespace PointOfSale.ItemCustomization
     /// </summary>
     public partial class CustomWarriorWater : UserControl
     {
-
+        /// <summary>
+        /// WarriorWater object to be used throughout CustomWarriorWater
+        /// </summary>
         WarriorWater wwCustom = new WarriorWater();
 
+        /// <summary>
+        /// Typical custructor that also links the buttons in the ui to wwCustom
+        /// </summary>
         public CustomWarriorWater()
         {
             InitializeComponent();
+            DataContext = wwCustom;
         }
 
+        /*
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(wwCustom);
@@ -36,5 +50,6 @@ namespace PointOfSale.ItemCustomization
         {
 
         }
+        */
     }
 }

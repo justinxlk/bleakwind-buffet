@@ -3,9 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:data="clr-namespace:BleakwindBuffet.Data.Enums;assembly=Data" 
              xmlns:local="clr-namespace:PointOfSale.ItemCustomization"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="sizes" ObjectType="system:Enum" MethodName="GetValues">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="data:Size"></x:Type>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -23,9 +32,7 @@
         <Button Grid.Column="0" Grid.Row="2" FontSize="30" Click="ClickCancel">Cancel</Button>
 
         <StackPanel Grid.Row="1" Grid.ColumnSpan="3">
-            <CheckBox FontSize="25" IsChecked="True" BorderThickness="10">Small</CheckBox>
-            <CheckBox FontSize="25" IsChecked="False" BorderThickness="10">Medium</CheckBox>
-            <CheckBox FontSize="25" IsChecked="False" BorderThickness="10">Large</CheckBox>
+            <ListBox ItemsSource="{Binding Source={StaticResource sizes}}" SelectedItem="{Binding Path=Size}" FontSize="25"></ListBox>
         </StackPanel>        
     </Grid>
 </UserControl>

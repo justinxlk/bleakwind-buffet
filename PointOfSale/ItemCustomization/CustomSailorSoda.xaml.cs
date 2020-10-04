@@ -1,4 +1,11 @@
-﻿using BleakwindBuffet.Data.Drinks;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: CustomSailorSoda.xaml.cs
+ * Purpose: Code behind CustomSailorSoda.xaml
+ */
+
+
+using BleakwindBuffet.Data.Drinks;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,14 +26,21 @@ namespace PointOfSale.ItemCustomization
     /// </summary>
     public partial class CustomSailorSoda : UserControl
     {
-
+        /// <summary>
+        /// SailorSoda object that is to be used throughout CustomSailorSoda
+        /// </summary>
         SailorSoda ssCustom = new SailorSoda();
 
+        /// <summary>
+        /// Typical custructor that also links the buttons in the ui to ssCustom
+        /// </summary>
         public CustomSailorSoda()
         {
             InitializeComponent();
+            DataContext = ssCustom;
         }
 
+        /*
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(ssCustom);
@@ -36,5 +50,6 @@ namespace PointOfSale.ItemCustomization
         {
 
         }
+        */
     }
 }

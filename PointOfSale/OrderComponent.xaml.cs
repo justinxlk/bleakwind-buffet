@@ -1,4 +1,11 @@
-﻿using BleakwindBuffet.Data;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: OrderComponet.xaml.cs
+ * Purpose: Code behind OrderComponent.xaml
+ */
+
+
+using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
@@ -20,17 +27,22 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderComponent : UserControl
     {
+        /// <summary>
+        /// constructor for OrderComponent
+        /// </summary>
         public OrderComponent()
         {
             InitializeComponent();
         }
 
-        public List<IOrderItem> list = new List<IOrderItem>();
+        //public List<IOrderItem> list = new List<IOrderItem>();
 
+        /*
         public void PutInOrder(IOrderItem orderItem)
         {
             list.Add(orderItem);
             currentItemsInOrder.Items.Add(orderItem.ToString());
         }
+        */
     }
 }

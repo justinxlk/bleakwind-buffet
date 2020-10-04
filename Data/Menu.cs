@@ -12,14 +12,18 @@ using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data
 {
     /// <summary>
     /// Class for the Menu
     /// </summary>
-    public class Menu
+    public class Menu : INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// returns an IEnumerable list of every entree in the form of an IOrderItem
         /// </summary>

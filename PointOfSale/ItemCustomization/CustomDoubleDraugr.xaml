@@ -23,13 +23,13 @@
         <Button Grid.Column="0" Grid.Row="2" FontSize="30" Click="ClickCancel">Cancel</Button>
 
         <StackPanel Grid.Row="1" Grid.ColumnSpan="3">
-            <CheckBox FontSize="25" IsChecked="True" BorderThickness="10">Bun</CheckBox>
-            <CheckBox FontSize="25" IsChecked="True" BorderThickness="10">Ketchup</CheckBox>
-            <CheckBox FontSize="25" IsChecked="True" BorderThickness="10">Mustard</CheckBox>
-            <CheckBox FontSize="25" IsChecked="True" BorderThickness="10">Pickle</CheckBox>
-            <CheckBox FontSize="25" IsChecked="True" BorderThickness="10">Cheese</CheckBox>
-            <CheckBox FontSize="25" IsChecked="True" BorderThickness="10">Tomato</CheckBox>
-            <CheckBox FontSize="25" IsChecked="True" BorderThickness="10">Lettuce</CheckBox>
+            <CheckBox FontSize="25" IsChecked="{Binding Path=Bun}" BorderThickness="10">Bun</CheckBox>
+            <CheckBox FontSize="25" IsChecked="{Binding Path=Ketchup}" BorderThickness="10">Ketchup</CheckBox>
+            <CheckBox FontSize="25" IsChecked="{Binding Path=Mustard}" BorderThickness="10">Mustard</CheckBox>
+            <CheckBox FontSize="25" IsChecked="{Binding Path=Pickle}" BorderThickness="10">Pickle</CheckBox>
+            <CheckBox FontSize="25" IsChecked="{Binding Path=Cheese}" BorderThickness="10">Cheese</CheckBox>
+            <CheckBox FontSize="25" IsChecked="{Binding Path=Tomato}" BorderThickness="10">Tomato</CheckBox>
+            <CheckBox FontSize="25" IsChecked="{Binding Path=Lettuce}" BorderThickness="10">Lettuce</CheckBox>
             <CheckBox FontSize="25" IsChecked="True" BorderThickness="10">Mayo</CheckBox>
         </StackPanel>
     </Grid>

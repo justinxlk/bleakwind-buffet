@@ -1,4 +1,11 @@
-﻿using BleakwindBuffet.Data.Drinks;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: CustomCandlehearthCoffee.xaml.cs
+ * Purpose: Code behind CustomCandlehearthCoffee.xaml
+ */
+
+
+using BleakwindBuffet.Data.Drinks;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,14 +26,21 @@ namespace PointOfSale.ItemCustomization
     /// </summary>
     public partial class CustomCandlehearthCoffee : UserControl
     {
-
+        /// <summary>
+        /// CandlehearthCoffee object to be used throughout CustomCandlehearthCoffee
+        /// </summary>
         public CandlehearthCoffee chcCustom = new CandlehearthCoffee();
 
+        /// <summary>
+        /// Typical custructor that also links the buttons in the ui to chcCustom
+        /// </summary>
         public CustomCandlehearthCoffee()
         {
             InitializeComponent();
+            DataContext = chcCustom;
         }
 
+        /*
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(chcCustom);
@@ -36,5 +50,6 @@ namespace PointOfSale.ItemCustomization
         {
 
         }
+        */
     }
 }

@@ -7,23 +7,38 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     /// <summary>
     /// Class for Warrior Water
     /// </summary>
-    public class WarriorWater : Drink
+    public class WarriorWater : Drink , INotifyPropertyChanged
     {
-        /// <summary>
-        /// Gets and sets the size.  Initializes the size to small.
-        /// </summary>
-        //public BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
 
-        
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private Enums.Size size = Enums.Size.Small;
+        /// <summary>
+        /// Gets and sets the size.  Initializes the size to small.   Updates ui to match property changes
+        /// </summary>
+        public override BleakwindBuffet.Data.Enums.Size Size
+        {
+            get
+            {
+                return size;
+            }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
+
         private bool ice = true;
         /// <summary>
-        /// Gets and sets if there is ice.  Initializes to true.
+        /// Gets and sets if there is ice.  Initializes to true.   Updates ui to match property changes
         /// </summary>
         public bool Ice
         {
@@ -36,13 +51,14 @@ namespace BleakwindBuffet.Data.Drinks
                 if (!value) specialInstructions.Add("Hold ice");
                 else specialInstructions.Remove("Hold ice");
                 ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
             }
         }
 
         
         private bool lemon = false;
         /// <summary>
-        /// Gets and sets if there is a lemon. Initializes to false.
+        /// Gets and sets if there is a lemon. Initializes to false.   Updates ui to match property changes
         /// </summary>
         public bool Lemon
         {
@@ -55,6 +71,7 @@ namespace BleakwindBuffet.Data.Drinks
                 if (value) specialInstructions.Add("Add lemon");
                 else specialInstructions.Remove("Add lemon");
                 lemon = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
             }
         }
 

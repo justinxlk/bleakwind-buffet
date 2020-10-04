@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
@@ -14,17 +15,37 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class for AretinoAppleJuice.
     /// </summary>
-    public class AretinoAppleJuice : Drink
+    public class AretinoAppleJuice : Drink , INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private Enums.Size size = Enums.Size.Small;
+        /// <summary>
+        /// Gets and sets the size.  Initializes the size to small. Updates the ui to match changes.
+        /// </summary>
+        public override BleakwindBuffet.Data.Enums.Size Size
+        {
+            get
+            {
+                return size;
+            }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
+
         /// <summary>
         /// Gets and sets the size.  Initializes the size to small.
         /// </summary>
         //public BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
 
-        
+
         private bool ice = false;
         /// <summary>
-        /// Gets and sets if there is ice.  Initializes to false.
+        /// Gets and sets if there is ice.  Initializes to false.   updates ui to match changes
         /// </summary>
         public bool Ice
         {
@@ -34,9 +55,16 @@ namespace BleakwindBuffet.Data.Drinks
             }
             set
             {
-                if (value) specialInstructions.Add("Add ice");
-                else specialInstructions.Remove("Add ice");
+                if (value)
+                {
+                    specialInstructions.Add("Add ice");
+                }
+                else
+                {
+                    specialInstructions.Remove("Add ice");
+                }
                 ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
             }
         }
 

@@ -7,14 +7,18 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// Class for Philly Poacher
     /// </summary>
-    public class PhillyPoacher : Entree
+    public class PhillyPoacher : Entree , INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// The price
         /// </summary>
@@ -39,7 +43,7 @@ namespace BleakwindBuffet.Data.Entrees
 
         private bool sirloin = true;
         /// <summary>
-        /// Gets and sets if there is sirloin. Initializes to true.
+        /// Gets and sets if there is sirloin. Initializes to true.   Updates ui to match property changes
         /// </summary>
         public bool Sirloin
         {
@@ -52,13 +56,14 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold sirloin");
                 else specialInstructions.Remove("Hold sirloin");
                 sirloin = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sirloin"));
             }
         }
 
 
         private bool onion = true;
         /// <summary>
-        /// Gets and sets if there are onions. Initializes to true.
+        /// Gets and sets if there are onions. Initializes to true.   Updates ui to match property changes
         /// </summary>
         public bool Onion
         {
@@ -71,13 +76,14 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold onions");
                 else specialInstructions.Remove("Hold onions");
                 onion = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Onion"));
             }
         }
 
 
         private bool roll = true;
         /// <summary>
-        /// Gets and sets if there are rolls. Initializes to true.
+        /// Gets and sets if there are rolls. Initializes to true.  Updates ui to match property changes
         /// </summary>
         public bool Roll
         {
@@ -90,6 +96,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold roll");
                 else specialInstructions.Remove("Hold roll");
                 roll = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Roll"));
             }
         }
 

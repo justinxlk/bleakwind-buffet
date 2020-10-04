@@ -1,4 +1,11 @@
-﻿using BleakwindBuffet.Data.Sides;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: CustomDragonbornWaffleFries.xaml.cs
+ * Purpose: Code behind CustomDragonbornWaffleFries.xaml
+ */
+
+
+using BleakwindBuffet.Data.Sides;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,14 +26,21 @@ namespace PointOfSale.ItemCustomization
     /// </summary>
     public partial class CustomDragonbornWaffleFries : UserControl
     {
-
+        /// <summary>
+        /// DragonbornWaffleFries object to be used throughout CustomDragonbornWaffleFries
+        /// </summary>
         DragonbornWaffleFries dbwfCustom = new DragonbornWaffleFries();
 
+        /// <summary>
+        /// Typical custructor that also links the buttons in the ui to dbwfCustom
+        /// </summary>
         public CustomDragonbornWaffleFries()
         {
             InitializeComponent();
+            DataContext = dbwfCustom;
         }
 
+        /*
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(dbwfCustom);
@@ -36,5 +50,6 @@ namespace PointOfSale.ItemCustomization
         {
 
         }
+        */
     }
 }

@@ -9,23 +9,38 @@ using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 using SodaFlavor = BleakwindBuffet.Data.Enums.SodaFlavor;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     /// <summary>
     /// Class for Sailor's Soda
     /// </summary>
-    public class SailorSoda : Drink
+    public class SailorSoda : Drink , INotifyPropertyChanged
     {
-        /// <summary>
-        /// Gets and sets the size.  Initializes the size to small.
-        /// </summary>
-        //public BleakwindBuffet.Data.Enums.Size Size { get; set; } = Enums.Size.Small;
 
-        
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private Enums.Size size = Enums.Size.Small;
+        /// <summary>
+        /// Gets and sets the size.  Initializes the size to small.   Updates ui to match property changes
+        /// </summary>
+        public override BleakwindBuffet.Data.Enums.Size Size
+        {
+            get
+            {
+                return size;
+            }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
+
         private bool ice = true;
         /// <summary>
-        /// Gets and sets if there is ice.  Initializes to true.
+        /// Gets and sets if there is ice.  Initializes to true.   Updates ui to match property changes
         /// </summary>
         public bool Ice
         {
@@ -38,6 +53,7 @@ namespace BleakwindBuffet.Data.Drinks
                 if (!value) specialInstructions.Add("Hold ice");
                 else specialInstructions.Remove("Hold ice");
                 ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
             }
         }
 
@@ -80,10 +96,22 @@ namespace BleakwindBuffet.Data.Drinks
             get => new List<string>(specialInstructions);
         }
 
+        private BleakwindBuffet.Data.Enums.SodaFlavor flavor = BleakwindBuffet.Data.Enums.SodaFlavor.Cherry;
         /// <summary>
         /// Gets and sets the Flavor. Initializes to Cherry.
         /// </summary>
-        public BleakwindBuffet.Data.Enums.SodaFlavor Flavor { get; set; } = BleakwindBuffet.Data.Enums.SodaFlavor.Cherry;
+        public BleakwindBuffet.Data.Enums.SodaFlavor Flavor 
+        {
+            get
+            {
+                return flavor;
+            } 
+            set
+            {
+                flavor = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+            }
+        }
 
         /// <summary>
         /// Overrides ToString

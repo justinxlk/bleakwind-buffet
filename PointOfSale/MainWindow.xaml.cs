@@ -1,4 +1,11 @@
-﻿using PointOfSale.ItemCustomization;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: MainWindow.xaml.cs
+ * Purpose: Code behind MainWindow.xaml
+ */
+
+
+using PointOfSale.ItemCustomization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +28,19 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// MenuSelection object to be used throughout MainWindow
+        /// </summary>
         public MenuSelection menu = new MenuSelection();
 
+        /// <summary>
+        /// OrderComponenet to be used throughout MainWindow
+        /// </summary>
         public OrderComponent order = new OrderComponent();
 
+        /// <summary>
+        /// Constructor for the MainWindow
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -34,12 +50,22 @@ namespace PointOfSale
             //buttonEnter.IsEnabled = false;
         }
 
+        /// <summary>
+        /// returns to the MenuSelection screen
+        /// </summary>
+        /// <param name="sender">buttonCancel aka the cancel button</param>
+        /// <param name="e"></param>
         public void ClickCancel(object sender, RoutedEventArgs e)
         {
             menu = new MenuSelection();
             biggestBorder.Child = menu;
         }
 
+        /// <summary>
+        /// returns to the MenueSelection screen, will do more in the future
+        /// </summary>
+        /// <param name="sender">buttonEnter aka the done button</param>
+        /// <param name="e"></param>
         public void ClickDone(object sender, RoutedEventArgs e)
         {
             menu = new MenuSelection();

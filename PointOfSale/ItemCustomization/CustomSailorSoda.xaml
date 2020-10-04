@@ -3,9 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:data="clr-namespace:BleakwindBuffet.Data.Enums;assembly=Data" 
              xmlns:local="clr-namespace:PointOfSale.ItemCustomization"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="sizes" ObjectType="system:Enum" MethodName="GetValues">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="data:Size"></x:Type>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider x:Key="flavors" ObjectType="system:Enum" MethodName="GetValues">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="data:SodaFlavor"></x:Type>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -23,16 +37,9 @@
         <Button Grid.Column="0" Grid.Row="2" FontSize="30" Click="ClickCancel">Cancel</Button>
 
         <StackPanel Grid.Row="1" Grid.ColumnSpan="3">
-            <CheckBox FontSize="23" IsChecked="True" BorderThickness="8">Ice</CheckBox>
-            <CheckBox FontSize="23" IsChecked="True" BorderThickness="8">Cherry</CheckBox>
-            <CheckBox FontSize="23" IsChecked="False" BorderThickness="8">Blackberry</CheckBox>
-            <CheckBox FontSize="23" IsChecked="False" BorderThickness="8">Grapefruit</CheckBox>
-            <CheckBox FontSize="23" IsChecked="False" BorderThickness="8">Lemon</CheckBox>
-            <CheckBox FontSize="23" IsChecked="False" BorderThickness="8">Peach</CheckBox>
-            <CheckBox FontSize="23" IsChecked="False" BorderThickness="8">Watermellon</CheckBox>
-            <CheckBox FontSize="23" IsChecked="True" BorderThickness="8">Small</CheckBox>
-            <CheckBox FontSize="23" IsChecked="False" BorderThickness="8">Medium</CheckBox>
-            <CheckBox FontSize="23" IsChecked="False" BorderThickness="8">Large</CheckBox>
+            <ComboBox ItemsSource="{Binding Source={StaticResource flavors}}" SelectedItem="{Binding Path=Flavor}" FontSize="25"></ComboBox>
+            <ListBox ItemsSource="{Binding Source={StaticResource sizes}}" SelectedItem="{Binding Path=Size}" FontSize="25"></ListBox>
+            <CheckBox FontSize="25" IsChecked="{Binding Path=Ice}" BorderThickness="10">Ice</CheckBox>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -1,4 +1,11 @@
-﻿using BleakwindBuffet.Data.Drinks;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: CustomMarkarthMilk.xaml.cs
+ * Purpose: Code behind CustomMarkarthMilk.xaml
+ */
+
+
+using BleakwindBuffet.Data.Drinks;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,14 +26,21 @@ namespace PointOfSale.ItemCustomization
     /// </summary>
     public partial class CustomMarkarthMilk : UserControl
     {
-
+        /// <summary>
+        /// MarkarthMilk object to be used throughout CustomMarkarthMilk
+        /// </summary>
         MarkarthMilk mmCustom = new MarkarthMilk();
 
+        /// <summary>
+        /// Typical custructor that also links the buttons in the ui to mmCustom
+        /// </summary>
         public CustomMarkarthMilk()
         {
             InitializeComponent();
+            DataContext = mmCustom;
         }
 
+        /*
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(mmCustom);
@@ -36,5 +50,6 @@ namespace PointOfSale.ItemCustomization
         {
 
         }
+        */
     }
 }

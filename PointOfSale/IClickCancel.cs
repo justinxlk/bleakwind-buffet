@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Justin Kingry
- * Class name: IOrderItem.cs
- * Purpose: Iterface class for each item on the menue 
+ * Class name: IClickCancel.cs
+ * Purpose: plan on changing this in future milestones
  */
 
 using System;
@@ -10,6 +10,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data
 {
+    /// <summary>
+    /// interface class for clicking the canceling 
+    /// </summary>
     public interface IClickCancel
     {
         /// <summary>
