@@ -19,10 +19,9 @@ namespace BleakwindBuffet.Data
     /// <summary>
     /// Class for the Menu
     /// </summary>
-    public class Menu : INotifyPropertyChanged
+    public class Menu
     {
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// returns an IEnumerable list of every entree in the form of an IOrderItem
