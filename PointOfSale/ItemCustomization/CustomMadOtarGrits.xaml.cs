@@ -40,7 +40,7 @@ namespace PointOfSale.ItemCustomization
             DataContext = mogCustom;
         }
 
-        /*
+        
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(mogCustom);
@@ -50,6 +50,6 @@ namespace PointOfSale.ItemCustomization
         {
 
         }
-        */
+        
     }
 }

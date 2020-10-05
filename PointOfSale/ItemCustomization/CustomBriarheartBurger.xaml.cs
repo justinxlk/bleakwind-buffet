@@ -40,7 +40,7 @@ namespace PointOfSale.ItemCustomization
             DataContext = bbCustom;
         }
 
-        /*
+        
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(bbCustom);
@@ -50,6 +50,6 @@ namespace PointOfSale.ItemCustomization
         {
 
         }
-        */
+        
     }
 }

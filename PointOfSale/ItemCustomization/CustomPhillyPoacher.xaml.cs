@@ -40,7 +40,7 @@ namespace PointOfSale.ItemCustomization
             DataContext = ppCustom;
         }
 
-        /*
+        
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(ppCustom);
@@ -50,6 +50,6 @@ namespace PointOfSale.ItemCustomization
         {
 
         }
-        */
+        
     }
 }

@@ -40,7 +40,7 @@ namespace PointOfSale.ItemCustomization
             DataContext = gooCustom;
         }
 
-        /*
+        
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(aaCustom);
@@ -50,6 +50,6 @@ namespace PointOfSale.ItemCustomization
         {
 
         }
-        */
+        
     }
 }

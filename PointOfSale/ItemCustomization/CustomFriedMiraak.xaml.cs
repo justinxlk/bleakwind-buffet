@@ -39,7 +39,7 @@ namespace PointOfSale.ItemCustomization
             InitializeComponent();
             DataContext = fmCustom;
         }
-        /*
+        
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(fmCustom);
@@ -49,6 +49,6 @@ namespace PointOfSale.ItemCustomization
         {
 
         }
-        */
+        
     }
 }
