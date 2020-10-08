@@ -7,6 +7,7 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -166,6 +167,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         [Fact]
+        public void ChangingBunNotifiesSpecialInstructionsProperty()
+        {
+            var bb = new BriarheartBurger();
+
+            Assert.PropertyChanged(bb, "SpecialInstructions", () =>
+            {
+                bb.Bun = !bb.Bun;
+            });
+        }
+
+        [Fact]
         public void ChangingKetchupNotifiesKetchupProperty()
         {
             var bb = new BriarheartBurger();
@@ -178,6 +190,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(bb, "Ketchup", () =>
             {
                 bb.Ketchup = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingKetchupNotifiesSpecialInstructionsProperty()
+        {
+            var bb = new BriarheartBurger();
+
+            Assert.PropertyChanged(bb, "SpecialInstructions", () =>
+            {
+                bb.Ketchup = !bb.Ketchup;
             });
         }
 
@@ -198,6 +221,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         [Fact]
+        public void ChangingMustardNotifiesSpecialInstructionsProperty()
+        {
+            var bb = new BriarheartBurger();
+
+            Assert.PropertyChanged(bb, "SpecialInstructions", () =>
+            {
+                bb.Mustard = !bb.Mustard;
+            });
+        }
+
+        [Fact]
         public void ChangingPickleNotifiesPickleProperty()
         {
             var bb = new BriarheartBurger();
@@ -210,6 +244,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(bb, "Pickle", () =>
             {
                 bb.Pickle = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingPickleNotifiesSpecialInstructionsProperty()
+        {
+            var bb = new BriarheartBurger();
+
+            Assert.PropertyChanged(bb, "SpecialInstructions", () =>
+            {
+                bb.Pickle = !bb.Pickle;
             });
         }
 
@@ -228,5 +273,24 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
                 bb.Cheese = false;
             });
         }
+
+        [Fact]
+        public void ChangingCheeseNotifiesSpecialInstructionsProperty()
+        {
+            var bb = new BriarheartBurger();
+
+            Assert.PropertyChanged(bb, "SpecialInstructions", () =>
+            {
+                bb.Cheese = !bb.Cheese;
+            });
+        }
+
+        [Fact]
+        public void IsAssignableFromINotifyPropertyChanged()
+        {
+            var bb = new BriarheartBurger();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(bb);
+        }
+
     }
 }

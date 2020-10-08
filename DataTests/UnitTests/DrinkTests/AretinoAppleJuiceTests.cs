@@ -8,6 +8,7 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -116,6 +117,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             });
         }
 
+        [Fact]
+        public void ChangingIceNotifiesSpecialInstructionsProperty()
+        {
+            var AJ = new AretinoAppleJuice();
+
+            Assert.PropertyChanged(AJ, "Ice", () =>
+            {
+                AJ.Ice = !AJ.Ice;
+            });
+        }
+
         [Theory]
         [InlineData(Size.Large)]
         [InlineData(Size.Medium)]
@@ -128,11 +140,42 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             {
                 AJ.Size = size;
             });
+        }
 
-            Assert.PropertyChanged(AJ, "Size", () =>
+        [Theory]
+        [InlineData(Size.Large)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Small)]
+        public void ChangingSizeNotifiesPriceProperty(Size size)
+        {
+            var AJ = new AretinoAppleJuice();
+
+            Assert.PropertyChanged(AJ, "Price", () =>
             {
                 AJ.Size = size;
             });
         }
+
+        [Theory]
+        [InlineData(Size.Large)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Small)]
+        public void ChangingSizeNotifiesCaloriesProperty(Size size)
+        {
+            var AJ = new AretinoAppleJuice();
+
+            Assert.PropertyChanged(AJ, "Calories", () =>
+            {
+                AJ.Size = size;
+            });
+        }
+
+        [Fact]
+        public void IsAssignableFromINotifyPropertyChanged()
+        {
+            var AJ = new AretinoAppleJuice();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(AJ);
+        }
+
     }
 }

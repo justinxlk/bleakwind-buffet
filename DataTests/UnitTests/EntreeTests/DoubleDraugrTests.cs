@@ -7,6 +7,7 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -227,6 +228,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         [Fact]
+        public void ChangingBunNotifiesSpecialInstructionsProperty()
+        {
+            var dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Bun = !dd.Bun;
+            });
+        }
+
+        [Fact]
         public void ChangingKetchupNotifiesKetchupProperty()
         {
             var dd = new DoubleDraugr();
@@ -239,6 +251,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(dd, "Ketchup", () =>
             {
                 dd.Ketchup = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingKetchupNotifiesSpecialInstructionsProperty()
+        {
+            var dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Ketchup = !dd.Ketchup;
             });
         }
 
@@ -259,6 +282,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         [Fact]
+        public void ChangingMustardNotifiesSpecialInstructionsProperty()
+        {
+            var dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Mustard = !dd.Mustard;
+            });
+        }
+
+        [Fact]
         public void ChangingPickleNotifiesPickleProperty()
         {
             var dd = new DoubleDraugr();
@@ -271,6 +305,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(dd, "Pickle", () =>
             {
                 dd.Pickle = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingPickleNotifiesSpecialInstructionsProperty()
+        {
+            var dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Pickle = !dd.Pickle;
             });
         }
 
@@ -291,6 +336,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         [Fact]
+        public void ChangingCheeseNotifiesSpecialInstructionsProperty()
+        {
+            var dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Cheese = !dd.Cheese;
+            });
+        }
+
+        [Fact]
         public void ChangingLettuceNotifiesLettuceProperty()
         {
             var dd = new DoubleDraugr();
@@ -303,6 +359,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(dd, "Lettuce", () =>
             {
                 dd.Lettuce = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingLettuceNotifiesSpecialInstructionsProperty()
+        {
+            var dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "Lettuce", () =>
+            {
+                dd.Lettuce = !dd.Lettuce;
             });
         }
 
@@ -323,6 +390,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         [Fact]
+        public void ChangingTomatoNotifiesSpecialInstructionsProperty()
+        {
+            var dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Tomato = !dd.Tomato;
+            });
+        }
+
+        [Fact]
         public void ChangingMayoNotifiesMayoProperty()
         {
             var dd = new DoubleDraugr();
@@ -337,5 +415,24 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
                 dd.Mayo = false;
             });
         }
+
+        [Fact]
+        public void ChangingMayoNotifiesSpecialInstructionsProperty()
+        {
+            var dd = new DoubleDraugr();
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
+            {
+                dd.Mayo = !dd.Mayo;
+            });
+        }
+
+        [Fact]
+        public void IsAssignableFromINotifyPropertyChanged()
+        {
+            var dd = new DoubleDraugr();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(dd);
+        }
+
     }
 }

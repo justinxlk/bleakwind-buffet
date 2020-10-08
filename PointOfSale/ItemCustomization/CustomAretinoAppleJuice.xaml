@@ -31,14 +31,7 @@
 
         <StackPanel Grid.Row="1" Grid.ColumnSpan="3">
             <CheckBox FontSize="25" IsChecked="{Binding Path=Ice}" BorderThickness="10">Ice</CheckBox>
-            <CheckBox Name="CheckBoxSmall" FontSize="25" IsChecked="True" BorderThickness="10">Small</CheckBox>
-            <CheckBox Name="CheckBoxMedium" FontSize="25" IsChecked="False" BorderThickness="10">Medium</CheckBox>
-            <CheckBox Name="CheckBoxLarge" FontSize="25" IsChecked="False" BorderThickness="10">Large</CheckBox>
-            <ComboBox Grid.Column="0">
-                <ComboBoxItem Name="ComboBoxSmall" FontSize="25" IsSelected="True">Small</ComboBoxItem>
-                <ComboBoxItem Name="ComboBoxMedium" FontSize="25">Medium</ComboBoxItem>
-                <ComboBoxItem Name="ComboBoxLarge" FontSize="25">Large</ComboBoxItem>
-            </ComboBox>
+            <ListBox ItemsSource="{Binding Source={StaticResource sizes}}" SelectedItem="{Binding Path=Size}" FontSize="25"></ListBox>
         </StackPanel>        
     </Grid>
 </UserControl>

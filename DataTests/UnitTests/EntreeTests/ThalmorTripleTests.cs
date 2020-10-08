@@ -7,6 +7,7 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -268,6 +269,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         [Fact]
+        public void ChangingBunNotifiesSpecialInstructionsProperty()
+        {
+            var tt = new ThalmorTriple();
+
+            Assert.PropertyChanged(tt, "SpecialInstructions", () =>
+            {
+                tt.Bun = !tt.Bun;
+            });
+        }
+
+        [Fact]
         public void ChangingKetchupNotifiesKetchupProperty()
         {
             var tt = new ThalmorTriple();
@@ -280,6 +292,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(tt, "Ketchup", () =>
             {
                 tt.Ketchup = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingKetchupNotifiesSpecialInstructionsProperty()
+        {
+            var tt = new ThalmorTriple();
+
+            Assert.PropertyChanged(tt, "SpecialInstructions", () =>
+            {
+                tt.Ketchup = !tt.Ketchup;
             });
         }
 
@@ -300,6 +323,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         [Fact]
+        public void ChangingMustardNotifiesSpecialInstructionsProperty()
+        {
+            var tt = new ThalmorTriple();
+
+            Assert.PropertyChanged(tt, "SpecialInstructions", () =>
+            {
+                tt.Mustard = !tt.Mustard;
+            });
+        }
+
+        [Fact]
         public void ChangingPickleNotifiesPickleProperty()
         {
             var tt = new ThalmorTriple();
@@ -312,6 +346,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(tt, "Pickle", () =>
             {
                 tt.Pickle = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingPickleNotifiesSpecialInstructionsProperty()
+        {
+            var tt = new ThalmorTriple();
+
+            Assert.PropertyChanged(tt, "SpecialInstructions", () =>
+            {
+                tt.Pickle = !tt.Pickle;
             });
         }
 
@@ -332,6 +377,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         [Fact]
+        public void ChangingCheeseNotifiesSpecialInstructionsProperty()
+        {
+            var tt = new ThalmorTriple();
+
+            Assert.PropertyChanged(tt, "SpecialInstructions", () =>
+            {
+                tt.Cheese = !tt.Cheese;
+            });
+        }
+
+        [Fact]
         public void ChangingLettuceNotifiesLettuceProperty()
         {
             var tt = new ThalmorTriple();
@@ -344,6 +400,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(tt, "Lettuce", () =>
             {
                 tt.Lettuce = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingLettuceNotifiesSpecialINstructionsProperty()
+        {
+            var tt = new ThalmorTriple();
+
+            Assert.PropertyChanged(tt, "SpecialInstructions", () =>
+            {
+                tt.Lettuce = !tt.Lettuce;
             });
         }
 
@@ -364,6 +431,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         [Fact]
+        public void ChangingTomatoNotifiesSpecialInstructionsProperty()
+        {
+            var tt = new ThalmorTriple();
+
+            Assert.PropertyChanged(tt, "SpecialInstructions", () =>
+            {
+                tt.Tomato = !tt.Tomato;
+            });
+        }
+
+        [Fact]
         public void ChangingMayoNotifiesMayoProperty()
         {
             var tt = new ThalmorTriple();
@@ -376,6 +454,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(tt, "Mayo", () =>
             {
                 tt.Mayo = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingMayoNotifiesSpecialInstructionsProperty()
+        {
+            var tt = new ThalmorTriple();
+
+            Assert.PropertyChanged(tt, "SpecialInstructions", () =>
+            {
+                tt.Mayo = !tt.Mayo;
             });
         }
 
@@ -396,6 +485,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         [Fact]
+        public void ChangingEggNotifiesSpecialInstructionsProperty()
+        {
+            var tt = new ThalmorTriple();
+
+            Assert.PropertyChanged(tt, "SpecialInstructions", () =>
+            {
+                tt.Egg = !tt.Egg;
+            });
+        }
+
+        [Fact]
         public void ChangingBaconNotifiesBaconProperty()
         {
             var tt = new ThalmorTriple();
@@ -410,5 +510,24 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
                 tt.Bacon = false;
             });
         }
+
+        [Fact]
+        public void ChangingBaconNotifiesSpecialInstructionsProperty()
+        {
+            var tt = new ThalmorTriple();
+
+            Assert.PropertyChanged(tt, "SpecialInstructions", () =>
+            {
+                tt.Bacon = !tt.Bacon;
+            });
+        }
+
+        [Fact]
+        public void IsAssignableFromINotifyPropertyChanged()
+        {
+            var tt = new ThalmorTriple();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(tt);
+        }
+
     }
 }

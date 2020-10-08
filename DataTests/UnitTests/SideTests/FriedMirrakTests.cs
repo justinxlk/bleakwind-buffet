@@ -8,6 +8,7 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Sides;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
@@ -97,5 +98,41 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
                 fm.Size = size;
             });
         }
+
+        [Theory]
+        [InlineData(Size.Large)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Small)]
+        public void ChangingSizeNotifiesPriceProperty(Size size)
+        {
+            var fm = new FriedMiraak();
+
+            Assert.PropertyChanged(fm, "Price", () =>
+            {
+                fm.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Large)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Small)]
+        public void ChangingSizeNotifiesCaloriesProperty(Size size)
+        {
+            var fm = new FriedMiraak();
+
+            Assert.PropertyChanged(fm, "Calories", () =>
+            {
+                fm.Size = size;
+            });
+        }
+
+        [Fact]
+        public void IsAssignableFromINotifyPropertyChanged()
+        {
+            var fm = new FriedMiraak();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(fm);
+        }
+
     }
 }

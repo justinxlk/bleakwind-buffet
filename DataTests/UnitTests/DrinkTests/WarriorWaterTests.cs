@@ -4,6 +4,7 @@ using System.Text;
 using BleakwindBuffet.Data.Drinks;
 using Xunit;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -135,6 +136,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         }
 
         [Fact]
+        public void ChangingIceNotifiesSpecialInstructionsProperty()
+        {
+            var ww = new WarriorWater();
+
+            Assert.PropertyChanged(ww, "SpecialInstructions", () =>
+            {
+                ww.Ice = !ww.Ice;
+            });
+        }
+
+        [Fact]
         public void ChangingLemonNotifiesLemonProperty()
         {
             var ww = new WarriorWater();
@@ -148,6 +160,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             {
                 ww.Lemon = false;
             });
+        }
+
+        [Fact]
+        public void IsAssignableFromINotifyPropertyChanged()
+        {
+            var ww = new WarriorWater();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(ww);
         }
 
     }

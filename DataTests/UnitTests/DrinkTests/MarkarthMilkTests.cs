@@ -8,6 +8,7 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -116,6 +117,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             });
         }
 
+        [Fact]
+        public void ChangingIceNotifiesSpecialInstuctionsProperty()
+        {
+            var mm = new MarkarthMilk();
+
+            Assert.PropertyChanged(mm, "SpecialInstructions", () =>
+            {
+                mm.Ice = !mm.Ice;
+            });
+        }
+
         [Theory]
         [InlineData(Size.Large)]
         [InlineData(Size.Medium)]
@@ -134,5 +146,41 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
                 mm.Size = size;
             });
         }
+
+        [Theory]
+        [InlineData(Size.Large)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Small)]
+        public void ChangingSizeNotifiesPriceProperty(Size size)
+        {
+            var mm = new MarkarthMilk();
+
+            Assert.PropertyChanged(mm, "Price", () =>
+            {
+                mm.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Large)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Small)]
+        public void ChangingSizeNotifiesCaloriesProperty(Size size)
+        {
+            var mm = new MarkarthMilk();
+
+            Assert.PropertyChanged(mm, "Calories", () =>
+            {
+                mm.Size = size;
+            });
+        }
+
+        [Fact]
+        public void IsAssignableFromINotifyPropertyChanged()
+        {
+            var mm = new MarkarthMilk();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(mm);
+        }
+
     }
 }

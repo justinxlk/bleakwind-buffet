@@ -10,6 +10,7 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -164,6 +165,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             });
         }
 
+        [Fact]
+        public void ChangingIceNotifiesSpecialInstructionsProperty()
+        {
+            var ss = new SailorSoda();
+
+            Assert.PropertyChanged(ss, "SpecialInstructions", () =>
+            {
+                ss.Ice = !ss.Ice;
+            });
+        }
+
         [Theory]
         [InlineData(Size.Large)]
         [InlineData(Size.Medium)]
@@ -178,6 +190,34 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             });
 
             Assert.PropertyChanged(ss, "Size", () =>
+            {
+                ss.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Large)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Small)]
+        public void ChangingSizeNotifiesPriceProperty(Size size)
+        {
+            var ss = new SailorSoda();
+
+            Assert.PropertyChanged(ss, "Price", () =>
+            {
+                ss.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Large)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Small)]
+        public void ChangingSizeNotifiesCaloriesProperty(Size size)
+        {
+            var ss = new SailorSoda();
+
+            Assert.PropertyChanged(ss, "Calories", () =>
             {
                 ss.Size = size;
             });
@@ -204,5 +244,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
                 ss.Flavor = flavor;
             });
         }
+
+        [Fact]
+        public void IsAssignableFromINotifyPropertyChanged()
+        {
+            var ss = new SailorSoda();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(ss);
+        }
+
     }
 }
