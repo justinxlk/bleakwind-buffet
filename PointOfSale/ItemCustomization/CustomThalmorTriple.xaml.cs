@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// ThalmorTriple object to be used throughout CustomThalmorTriple
         /// </summary>
-        ThalmorTriple ttCustom = new ThalmorTriple();
+        public ThalmorTriple ttCustom = new ThalmorTriple();
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to ttCustom

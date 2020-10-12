@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// MadOtarGrits object to be used thoroughout CustomMadOtarGrits
         /// </summary>
-        MadOtarGrits mogCustom = new MadOtarGrits();
+        public MadOtarGrits mogCustom = new MadOtarGrits();
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to mogCustom

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
+using System.Data;
 
 namespace BleakwindBuffet.Data.Entrees
 {
@@ -17,7 +18,7 @@ namespace BleakwindBuffet.Data.Entrees
     public class BriarheartBurger : Entree , INotifyPropertyChanged
     {
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public override event PropertyChangedEventHandler PropertyChanged;
 
         private double price1 = 6.32;
         /// <summary>

@@ -18,7 +18,7 @@ namespace BleakwindBuffet.Data.Sides
     public class VokunSalad : Side , INotifyPropertyChanged
     {
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public override event PropertyChangedEventHandler PropertyChanged;
 
         private Size size = Size.Small;
         /// <summary>
@@ -36,6 +36,8 @@ namespace BleakwindBuffet.Data.Sides
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("StringName"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("StringPrice"));
             }
         }
 

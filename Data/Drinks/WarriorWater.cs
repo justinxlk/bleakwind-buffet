@@ -17,7 +17,7 @@ namespace BleakwindBuffet.Data.Drinks
     public class WarriorWater : Drink , INotifyPropertyChanged
     {
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public override event PropertyChangedEventHandler PropertyChanged;
 
         private Enums.Size size = Enums.Size.Small;
         /// <summary>
@@ -33,6 +33,8 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 size = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("StringName"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("StringPrice"));
             }
         }
 

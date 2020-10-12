@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// MarkarthMilk object to be used throughout CustomMarkarthMilk
         /// </summary>
-        MarkarthMilk mmCustom = new MarkarthMilk();
+        public MarkarthMilk mmCustom = new MarkarthMilk();
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to mmCustom

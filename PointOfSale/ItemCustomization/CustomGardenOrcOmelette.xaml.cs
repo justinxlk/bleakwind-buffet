@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// GardenOrcOmelette object to be used throughout CustomGardenOrcOmelette
         /// </summary>
-        GardenOrcOmelette gooCustom = new GardenOrcOmelette();
+        public GardenOrcOmelette gooCustom = new GardenOrcOmelette();
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to gooCustom

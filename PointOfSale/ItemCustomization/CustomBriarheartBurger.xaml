@@ -27,5 +27,6 @@
             <CheckBox FontSize="25" IsChecked="{Binding Path=Pickle}" BorderThickness="10">Pickle</CheckBox>
             <CheckBox FontSize="25" IsChecked="{Binding Path=Cheese}" BorderThickness="10">Cheese</CheckBox>
         </StackPanel>
+
     </Grid>
 </UserControl>

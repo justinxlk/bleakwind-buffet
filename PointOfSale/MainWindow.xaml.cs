@@ -5,6 +5,7 @@
  */
 
 
+using BleakwindBuffet.Data;
 using PointOfSale.ItemCustomization;
 using System;
 using System.Collections.Generic;
@@ -28,15 +29,6 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
-        /// <summary>
-        /// MenuSelection object to be used throughout MainWindow
-        /// </summary>
-        public MenuSelection menu = new MenuSelection();
-
-        /// <summary>
-        /// OrderComponenet to be used throughout MainWindow
-        /// </summary>
-        public OrderComponent order = new OrderComponent();
 
         /// <summary>
         /// Constructor for the MainWindow
@@ -44,10 +36,10 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
-            biggestBorder.Child = menu;
-            bigBorder.Child = order;
             //buttonCancel.IsEnabled = false;
             //buttonEnter.IsEnabled = false;
+            //order.DataContext = new BleakwindBuffet.Data.OrderLogic();
+            DataContext = new BleakwindBuffet.Data.OrderLogic();
         }
 
         /// <summary>
@@ -57,8 +49,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void ClickCancel(object sender, RoutedEventArgs e)
         {
-            menu = new MenuSelection();
-            biggestBorder.Child = menu;
+            menuSelection = new MenuSelection();
+            biggestBorder.Child = menuSelection;
         }
 
         /// <summary>
@@ -66,12 +58,20 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">buttonEnter aka the done button</param>
         /// <param name="e"></param>
-        public void ClickDone(object sender, RoutedEventArgs e)
-        {
-            menu = new MenuSelection();
-            biggestBorder.Child = menu;
+        public void ClickAddOrder(object sender, RoutedEventArgs e)
+        {   
             
+            menuSelection = new MenuSelection();
+            biggestBorder.Child = menuSelection;
+             
             
         }
+
+        public void ClickNewOrder(object sender, RoutedEventArgs e)
+        {
+            /*orderComponent.*/DataContext = new BleakwindBuffet.Data.OrderLogic();
+
+        }
+
     }
 }

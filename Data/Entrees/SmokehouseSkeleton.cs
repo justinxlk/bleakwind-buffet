@@ -16,7 +16,7 @@ namespace BleakwindBuffet.Data.Entrees
     public class SmokehouseSkeleton : Entree , INotifyPropertyChanged
     {
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public override event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// The price

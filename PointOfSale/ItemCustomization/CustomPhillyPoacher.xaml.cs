@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// PhillyPoacher object to be used throughout CustomPhillyPoacher
         /// </summary>
-        PhillyPoacher ppCustom = new PhillyPoacher();
+        public PhillyPoacher ppCustom = new PhillyPoacher();
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to ppCustom

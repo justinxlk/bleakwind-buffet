@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// DoubleDraugr to be used throughout CustomDoubleDraugr
         /// </summary>
-        DoubleDraugr ddCustom = new DoubleDraugr();
+        public DoubleDraugr ddCustom = new DoubleDraugr();
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to ddCustom

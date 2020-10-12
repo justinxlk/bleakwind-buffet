@@ -6,12 +6,16 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public abstract class Entree : IOrderItem
+    public abstract class Entree : IOrderItem, INotifyPropertyChanged
     {
+
+        public virtual event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// The price of the entree
         /// </summary>
@@ -28,5 +32,16 @@ namespace BleakwindBuffet.Data.Entrees
         /// The entree's special instructions needed for prepparation
         /// </summary>
         public virtual List<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// makes the entrees name into a property so that it can be changed on the fly
+        /// </summary>
+        public virtual string StringName { get { return ToString(); } }
+
+        /// <summary>
+        /// puts a $ before the price
+        /// </summary>
+        public virtual string StringPrice { get { return "$" + Price; } }
+
     }
 }

@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// VokunSalad object to be used throughout CustomVokunSalad
         /// </summary>
-        VokunSalad vsCustom = new VokunSalad();
+        public VokunSalad vsCustom = new VokunSalad();
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to vsCustom

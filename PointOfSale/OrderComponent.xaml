@@ -7,18 +7,42 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="175">
     <DockPanel Name="OrderPanel">
-        <TextBlock DockPanel.Dock="Top" TextAlignment="Center" FontWeight="Bold">
-            Order #100
-        </TextBlock>
-        <TextBlock Name="totalOrderCost" TextAlignment="Center" Text="Total:" DockPanel.Dock="Bottom">
+        <TextBlock Text="{Binding Path=OrderNumber}" Name="Order" DockPanel.Dock="Top" TextAlignment="Center" FontWeight="Bold" FontSize="20">
 
         </TextBlock>
-        <TextBlock Name="totalTaxCost" TextAlignment="Center" Text="Tax:" DockPanel.Dock="Bottom">
+        <TextBlock Name="totalOrderCost" TextAlignment="Center" Text="{Binding Path=TextForTotal}" DockPanel.Dock="Bottom" FontSize="15">
+
+        </TextBlock>
+        <TextBlock Name="totalTaxCost" TextAlignment="Center" Text="{Binding Path=TextForTax}" DockPanel.Dock="Bottom" FontSize="15">
             
         </TextBlock>
-        <TextBlock Name="totalSubTotal" TextAlignment="Center" Text="Subtotal:" DockPanel.Dock="Bottom"></TextBlock>
-        <ListView Name="currentItemsInOrder">
-            
+        <TextBlock Name="totalSubTotal" TextAlignment="Center" Text="{Binding Path=TextForSubtotal}" 
+                   DockPanel.Dock="Bottom" FontSize="15"></TextBlock>
+        <ListView Name="orderDisplay" ItemsSource="{Binding}" SelectedItem="selectedItem" FontSize="15">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Name="itemName" Text="{Binding Path=StringName}" FontSize="15"></TextBlock>
+                        <TextBlock Name="itemPrice" Text="{Binding Path=StringPrice}" FontSize="15"></TextBlock>
+                        <ListView Name="instructionsDisplay" ItemsSource="{Binding Path=SpecialInstructions}">
+                           
+                        </ListView>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="10"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Button Grid.Column="0" Grid.Row="0" FontSize="20" Click="ClickRemove" >Remove</Button>
+                            <Button Grid.Column="1" Grid.Row="0" FontSize="20" Click="ClickChange">Change</Button>
+                        </Grid>
+                        
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
 
     </DockPanel>

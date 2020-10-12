@@ -33,7 +33,46 @@ namespace PointOfSale
         public OrderComponent()
         {
             InitializeComponent();
+            
         }
+
+        /// <summary>
+        /// removes the selected item from the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ClickRemove(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is OrderLogic orderLogic)
+            {
+                //IOrderItem i = (IOrderItem)orderDisplay.SelectedItem;
+                //orderLogic.Remove(i);
+                if (orderDisplay.SelectedItem is IOrderItem item && item != null)
+                {
+                    orderLogic.Remove(item);
+                }
+            }
+            else
+            {
+                throw new NotImplementedException("data context is not OrderLogic");
+            }
+        }
+
+        /// <summary>
+        /// goes back to the page to change the item details
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ClickChange(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+
+
+
+
+
 
         //public List<IOrderItem> list = new List<IOrderItem>();
 

@@ -17,10 +17,13 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
-        <Border Name="biggestBorder" Grid.ColumnSpan="3"></Border>
-        <Border Name="bigBorder" Grid.Column="99" Grid.Row="0"></Border>
-        <Button Name="buttonCancel" Grid.Column="0" Grid.Row="99" FontSize="30" Click="ClickCancel">Cancel</Button>
-        <Button Name="buttonEnter" Grid.Column="2" Grid.Row="99" FontSize="30" Click="ClickDone">Done</Button>
-        <Button Name="buttonCheckOut" Grid.Column="99" Grid.Row="99" FontSize="30" Click="ClickDone">Check Out</Button>
+        <Border Name="biggestBorder" Grid.ColumnSpan="3">
+            <local:MenuSelection x:Name="menuSelection"></local:MenuSelection>
+        </Border>
+        <Border Name="bigBorder" Grid.Column="3" Grid.Row="0">
+            <local:OrderComponent x:Name="orderComponent"/>
+        </Border>
+        <Button Name="buttonEnter" Grid.Column="0" Grid.Row="99" FontSize="30" Click="ClickAddOrder" Grid.ColumnSpan="2">To Add to Order Page</Button>
+        <Button Name="buttonNewOrder" Grid.Column="3" Grid.Row="99" FontSize="30" Click="ClickNewOrder">New</Button>
     </Grid>
 </Window>

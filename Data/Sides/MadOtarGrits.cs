@@ -17,7 +17,7 @@ namespace BleakwindBuffet.Data.Sides
     public class MadOtarGrits : Side , INotifyPropertyChanged
     {
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public override event PropertyChangedEventHandler PropertyChanged;
 
         private Enums.Size size = Enums.Size.Small;
         /// <summary>
@@ -35,6 +35,8 @@ namespace BleakwindBuffet.Data.Sides
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("StringName"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("StringPrice"));
             }
         }
 

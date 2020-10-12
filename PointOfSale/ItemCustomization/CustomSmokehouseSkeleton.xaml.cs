@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// SmokehouseSkeleton object to be used throughout CustomSmokehouseSkeleton
         /// </summary>
-        SmokehouseSkeleton ssCustom = new SmokehouseSkeleton();
+        public SmokehouseSkeleton ssCustom = new SmokehouseSkeleton();
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to ssCustom

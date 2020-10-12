@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// DragonbornWaffleFries object to be used throughout CustomDragonbornWaffleFries
         /// </summary>
-        DragonbornWaffleFries dbwfCustom = new DragonbornWaffleFries();
+        public DragonbornWaffleFries dbwfCustom = new DragonbornWaffleFries();
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to dbwfCustom

@@ -16,10 +16,10 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// A base class representing common properties of drinks.
     /// </summary>
-    public abstract class Drink : IOrderItem //, INotifyPropertyChanged
+    public abstract class Drink : IOrderItem , INotifyPropertyChanged
     {
 
-        //public event PropertyChangedEventHandler PropertyChanged;
+        public virtual event PropertyChangedEventHandler PropertyChanged;
 
         private Size size = Size.Small;
         /// <summary>
@@ -53,5 +53,16 @@ namespace BleakwindBuffet.Data.Drinks
         /// The drink's special instructions needed for prepperation
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// makes the drinks name into a property so that it can be changed on the fly
+        /// </summary>
+        public virtual string StringName { get { return ToString(); } }
+
+        /// <summary>
+        /// puts a $ before the price
+        /// </summary>
+        public virtual string StringPrice { get { return "$" + Price; } }
+
     }
 }

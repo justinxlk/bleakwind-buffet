@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Border Name="AddToOrderPage">
+    <Border x:Name="AddToOrderPage">
      <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35"></RowDefinition>

@@ -5,6 +5,7 @@
  */
 
 
+using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// BriarheartBurger object to be used throughout CustomBriarheartBurger
         /// </summary>
-        public BriarheartBurger bbCustom = new BriarheartBurger();
+        public BriarheartBurger bbCustom => new BriarheartBurger();
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to bbCustom
@@ -44,6 +45,21 @@ namespace PointOfSale.ItemCustomization
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(bbCustom);
+            
+            /*
+            if (DataContext is OrderLogic orderLogic)
+            {
+                //var task = new OrderLogic(newTaskTextBox.Text);
+                //orderLogic.Add(bbCustom);
+                //newTaskTextBox.Clear();
+            }
+            else
+            {
+                throw new NotImplementedException("data context is Briarheart burger.cs");
+            }
+            */
+            
+
         }
 
         void ClickCancel(object sender, RoutedEventArgs e)

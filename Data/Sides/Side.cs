@@ -12,10 +12,10 @@ using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public abstract class Side : IOrderItem //, INotifyPropertyChanged
+    public abstract class Side : IOrderItem , INotifyPropertyChanged
     {
 
-        //public event PropertyChangedEventHandler PropertyChanged;
+        public virtual event PropertyChangedEventHandler PropertyChanged;
 
         private Size size = Size.Small;
         /// <summary>
@@ -49,5 +49,16 @@ namespace BleakwindBuffet.Data.Sides
         /// The side's special instructions needed for prepparation
         /// </summary>
         public virtual List<string> SpecialInstructions{ get; }
+
+        /// <summary>
+        /// makes the sides string into a property so that it may be changed on the fly
+        /// </summary>
+        public virtual string StringName { get { return ToString(); } }
+
+        /// <summary>
+        /// puts a $ before the price
+        /// </summary>
+        public virtual string StringPrice { get { return "$" + Price; } }
+
     }
 }

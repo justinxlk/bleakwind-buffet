@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// WarriorWater object to be used throughout CustomWarriorWater
         /// </summary>
-        WarriorWater wwCustom = new WarriorWater();
+        public WarriorWater wwCustom = new WarriorWater();
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to wwCustom

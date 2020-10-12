@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// FriedMiraak object to be used throughout CustomFriedMiraar
         /// </summary>
-        FriedMiraak fmCustom = new FriedMiraak();
+        public FriedMiraak fmCustom = new FriedMiraak();
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to fmCustom

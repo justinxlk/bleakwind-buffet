@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// SailorSoda object that is to be used throughout CustomSailorSoda
         /// </summary>
-        SailorSoda ssCustom = new SailorSoda();
+        public SailorSoda ssCustom = new SailorSoda();
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to ssCustom
