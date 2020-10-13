@@ -112,7 +112,7 @@ namespace BleakwindBuffet.Data
                 specialInstructions.Add(Entree.ToString());
                 specialInstructions.AddRange(Entree.SpecialInstructions);
                 specialInstructions.Add(Side.ToString());
-                specialInstructions.AddRange(Entree.SpecialInstructions);
+                specialInstructions.AddRange(Side.SpecialInstructions);
                 return specialInstructions;
             }
             private set { specialInstructions = value; } 

@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// MadOtarGrits object to be used thoroughout CustomMadOtarGrits
         /// </summary>
-        public MadOtarGrits mogCustom = new MadOtarGrits();
+        public MadOtarGrits mogCustom;
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to mogCustom
@@ -40,7 +40,12 @@ namespace PointOfSale.ItemCustomization
             DataContext = mogCustom;
         }
 
-        
+        public CustomMadOtarGrits(MadOtarGrits mog)
+        {
+            InitializeComponent();
+            mogCustom = mog;
+            DataContext = mog;
+        }
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(mogCustom);

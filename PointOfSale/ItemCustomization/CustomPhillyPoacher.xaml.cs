@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// PhillyPoacher object to be used throughout CustomPhillyPoacher
         /// </summary>
-        public PhillyPoacher ppCustom = new PhillyPoacher();
+        public PhillyPoacher ppCustom;
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to ppCustom
@@ -40,7 +40,12 @@ namespace PointOfSale.ItemCustomization
             DataContext = ppCustom;
         }
 
-        
+        public CustomPhillyPoacher(PhillyPoacher pp)
+        {
+            InitializeComponent();
+            ppCustom = pp;
+            DataContext = pp;
+        }
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(ppCustom);

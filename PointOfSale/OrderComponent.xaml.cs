@@ -6,7 +6,10 @@
 
 
 using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Sides;
+using PointOfSale.ItemCustomization;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -58,6 +61,22 @@ namespace PointOfSale
             }
         }
 
+        private MainWindow Mw
+        {
+            get
+            {
+                DependencyObject parent = this;
+                do
+                {
+                    // Get this node's parent
+                    parent = LogicalTreeHelper.GetParent(parent);
+                }
+                // Invariant: there is a parent element, and it is not a ListSwitcher 
+                while (!(parent is null || parent is MainWindow));
+                return parent as MainWindow;
+            }
+        }
+
         /// <summary>
         /// goes back to the page to change the item details
         /// </summary>
@@ -65,7 +84,91 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void ClickChange(object sender, RoutedEventArgs e)
         {
-            
+            //if (DataContext is OrderLogic orderLogic)
+            //{
+                if (orderDisplay.SelectedItem is IOrderItem item && item != null)
+                {
+                    if (item is BriarheartBurger bb)
+                    {
+                        CustomBriarheartBurger cbb = new CustomBriarheartBurger(bb);
+                        Mw.biggestBorder.Child = cbb;
+                    }
+                    else if (item is AretinoAppleJuice aa)
+                    {
+                        CustomAretinoAppleJuice caa = new CustomAretinoAppleJuice(aa);
+                        Mw.biggestBorder.Child = caa;
+                    }
+                    else if (item is CandlehearthCoffee chc)
+                    {
+                        CustomCandlehearthCoffee cchc = new CustomCandlehearthCoffee(chc);
+                        Mw.biggestBorder.Child = cchc;
+                    }
+                    else if (item is DoubleDraugr dd)
+                    {
+                        CustomDoubleDraugr cdd = new CustomDoubleDraugr(dd);
+                        Mw.biggestBorder.Child = cdd;
+                    }
+                    else if (item is DragonbornWaffleFries dbwf)
+                    {
+                        CustomDragonbornWaffleFries cdbwf = new CustomDragonbornWaffleFries();
+                        Mw.biggestBorder.Child = cdbwf;
+                    }
+                    else if (item is FriedMiraak fm)
+                    {
+                        CustomFriedMiraak cfm = new CustomFriedMiraak(fm);
+                        Mw.biggestBorder.Child = cfm;
+                    }
+                    else if (item is GardenOrcOmelette goo)
+                    {
+                        CustomGardenOrcOmelette cgoo = new CustomGardenOrcOmelette(goo);
+                        Mw.biggestBorder.Child = cgoo;
+                    }
+                    else if (item is MadOtarGrits mog)
+                    {
+                        CustomMadOtarGrits cmog = new CustomMadOtarGrits(mog);
+                        Mw.biggestBorder.Child = cmog;
+                    }
+                    else if (item is MarkarthMilk mm)
+                    {
+                        CustomMarkarthMilk cmm = new CustomMarkarthMilk(mm);
+                        Mw.biggestBorder.Child = cmm;
+                    }
+                    else if (item is PhillyPoacher pp)
+                    {
+                        CustomPhillyPoacher cpp = new CustomPhillyPoacher(pp);
+                        Mw.biggestBorder.Child = cpp;
+                    }
+                    else if (item is SailorSoda ss)
+                    {
+                        CustomSailorSoda css = new CustomSailorSoda(ss);
+                        Mw.biggestBorder.Child = css;
+                    }
+                    else if (item is SmokehouseSkeleton shs)
+                    {
+                        CustomSmokehouseSkeleton cshs = new CustomSmokehouseSkeleton(shs);
+                        Mw.biggestBorder.Child = cshs;
+                    }
+                    else if (item is ThalmorTriple tt)
+                    {
+                        CustomThalmorTriple ctt = new CustomThalmorTriple(tt);
+                        Mw.biggestBorder.Child = ctt;
+                    }
+                    else if (item is VokunSalad vs)
+                    {
+                        CustomVokunSalad cvs = new CustomVokunSalad(vs);
+                        Mw.biggestBorder.Child = cvs;
+                    }
+                    else if (item is WarriorWater ww)
+                    {
+                        CustomWarriorWater cww = new CustomWarriorWater(ww);
+                        Mw.biggestBorder.Child = cww;
+                    }
+                }
+            //}
+            //else
+            //{
+                //throw new NotImplementedException("data context is not OrderLogic");
+            //}
         }
 
 

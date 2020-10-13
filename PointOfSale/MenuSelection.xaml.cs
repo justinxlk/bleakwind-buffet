@@ -6,7 +6,9 @@
 
 
 using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Sides;
 using PointOfSale.ItemCustomization;
 using System;
 using System.Collections.Generic;
@@ -47,11 +49,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickBriarheartBurger(object sender, RoutedEventArgs e)
         {
-            CustomBriarheartBurger cbb = new CustomBriarheartBurger();
+            BriarheartBurger bb = new BriarheartBurger();
+            CustomBriarheartBurger cbb = new CustomBriarheartBurger(bb);
             AddToOrderPage.Child = cbb;
             if (DataContext is OrderLogic orderLogic)
             {
-                orderLogic.Add(cbb.bbCustom);
+                orderLogic.Add(bb);
 
             }
             else
@@ -69,11 +72,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickDoubleDraugr(object sender, RoutedEventArgs e)
         {
-            CustomDoubleDraugr cdd = new CustomDoubleDraugr();
+            DoubleDraugr dd = new DoubleDraugr();
+            CustomDoubleDraugr cdd = new CustomDoubleDraugr(dd);
             AddToOrderPage.Child = cdd;
             if (DataContext is OrderLogic orderLogic)
             {
-                orderLogic.Add(cdd.ddCustom);
+                orderLogic.Add(dd);
 
             }
             else
@@ -90,11 +94,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickThalmorTriple(object sender, RoutedEventArgs e)
         {
-            CustomThalmorTriple ctt = new CustomThalmorTriple();
+            ThalmorTriple tt = new ThalmorTriple();
+            CustomThalmorTriple ctt = new CustomThalmorTriple(tt);
             AddToOrderPage.Child = ctt;
             if (DataContext is OrderLogic orderLogic)
             {
-                orderLogic.Add(ctt.ttCustom);
+                orderLogic.Add(tt);
 
             }
             else
@@ -110,11 +115,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickAretinoAppleJuice(object sender, RoutedEventArgs e)
         {
-            CustomAretinoAppleJuice caj = new CustomAretinoAppleJuice();
+            AretinoAppleJuice aa = new AretinoAppleJuice();
+            CustomAretinoAppleJuice caj = new CustomAretinoAppleJuice(aa);
             AddToOrderPage.Child = caj;
             if (DataContext is OrderLogic orderLogic)
             {
-                orderLogic.Add(caj.aaCustom);
+                orderLogic.Add(aa);
 
             }
             else
@@ -130,11 +136,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickCandlehearthCoffee(object sender, RoutedEventArgs e)
         {
-            CustomCandlehearthCoffee cchc = new CustomCandlehearthCoffee();
+            CandlehearthCoffee chc = new CandlehearthCoffee();
+            CustomCandlehearthCoffee cchc = new CustomCandlehearthCoffee(chc);
             AddToOrderPage.Child = cchc;
             if (DataContext is OrderLogic orderLogic)
             {
-                orderLogic.Add(cchc.chcCustom);
+                orderLogic.Add(chc);
 
             }
             else
@@ -150,11 +157,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickDragonbornWaffleFries(object sender, RoutedEventArgs e)
         {
-            CustomDragonbornWaffleFries cdbwf = new CustomDragonbornWaffleFries();
+            DragonbornWaffleFries dbwf = new DragonbornWaffleFries();
+            CustomDragonbornWaffleFries cdbwf = new CustomDragonbornWaffleFries(dbwf);
             AddToOrderPage.Child = cdbwf;
             if (DataContext is OrderLogic orderLogic)
             {
-                orderLogic.Add(cdbwf.dbwfCustom);
+                orderLogic.Add(dbwf);
 
             }
             else
@@ -170,11 +178,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickFriedMiraak(object sender, RoutedEventArgs e)
         {
-            CustomFriedMiraak cfm = new CustomFriedMiraak();
+            FriedMiraak fm = new FriedMiraak();
+            CustomFriedMiraak cfm = new CustomFriedMiraak(fm);
             AddToOrderPage.Child = cfm;
             if (DataContext is OrderLogic orderLogic)
             {
-                orderLogic.Add(cfm.fmCustom);
+                orderLogic.Add(fm);
 
             }
             else
@@ -190,11 +199,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickGardenOrcOmelette(object sender, RoutedEventArgs e)
         {
-            CustomGardenOrcOmelette cgoo = new CustomGardenOrcOmelette();
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+            CustomGardenOrcOmelette cgoo = new CustomGardenOrcOmelette(goo);
             AddToOrderPage.Child = cgoo;
             if (DataContext is OrderLogic orderLogic)
             {
-                orderLogic.Add(cgoo.gooCustom);
+                orderLogic.Add(goo);
 
             }
             else
@@ -210,11 +220,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickMadOtarGrits(object sender, RoutedEventArgs e)
         {
-            CustomMadOtarGrits cmog = new CustomMadOtarGrits();
+            MadOtarGrits mog = new MadOtarGrits();
+            CustomMadOtarGrits cmog = new CustomMadOtarGrits(mog);
             AddToOrderPage.Child = cmog;
             if (DataContext is OrderLogic orderLogic)
             {
-                orderLogic.Add(cmog.mogCustom);
+                orderLogic.Add(mog);
 
             }
             else
@@ -230,11 +241,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickMarkarthMilk(object sender, RoutedEventArgs e)
         {
-            CustomMarkarthMilk cmm = new CustomMarkarthMilk();
+            MarkarthMilk mm = new MarkarthMilk();
+            CustomMarkarthMilk cmm = new CustomMarkarthMilk(mm);
             AddToOrderPage.Child = cmm;
             if (DataContext is OrderLogic orderLogic)
             {
-                orderLogic.Add(cmm.mmCustom);
+                orderLogic.Add(mm);
 
             }
             else
@@ -251,11 +263,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickPhillyPoacher(object sender, RoutedEventArgs e)
         {
-            CustomPhillyPoacher cpp = new CustomPhillyPoacher();
+            PhillyPoacher pp = new PhillyPoacher();
+            CustomPhillyPoacher cpp = new CustomPhillyPoacher(pp);
             AddToOrderPage.Child = cpp;
             if (DataContext is OrderLogic orderLogic)
             {
-                orderLogic.Add(cpp.ppCustom);
+                orderLogic.Add(pp);
 
             }
             else
@@ -271,11 +284,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickSailorSoda(object sender, RoutedEventArgs e)
         {
-            CustomSailorSoda css = new CustomSailorSoda();
+            SailorSoda ss = new SailorSoda();
+            CustomSailorSoda css = new CustomSailorSoda(ss);
             AddToOrderPage.Child = css;
             if (DataContext is OrderLogic orderLogic)
             {
-                orderLogic.Add(css.ssCustom);
+                orderLogic.Add(ss);
 
             }
             else
@@ -291,11 +305,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickSmokehouseSkeleton(object sender, RoutedEventArgs e)
         {
-            CustomSmokehouseSkeleton css = new CustomSmokehouseSkeleton();
+            SmokehouseSkeleton ss = new SmokehouseSkeleton();
+            CustomSmokehouseSkeleton css = new CustomSmokehouseSkeleton(ss);
             AddToOrderPage.Child = css;
             if (DataContext is OrderLogic orderLogic)
             {
-                orderLogic.Add(css.ssCustom);
+                orderLogic.Add(ss);
 
             }
             else
@@ -312,11 +327,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickVokunSalad(object sender, RoutedEventArgs e)
         {
+            VokunSalad vs = new VokunSalad();
             CustomVokunSalad cvs = new CustomVokunSalad();
             AddToOrderPage.Child = cvs;
             if (DataContext is OrderLogic orderLogic)
             {
-                orderLogic.Add(cvs.vsCustom);
+                orderLogic.Add(vs);
 
             }
             else
@@ -332,11 +348,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickWarriorWater(object sender, RoutedEventArgs e)
         {
-            CustomWarriorWater cww = new CustomWarriorWater();
+            WarriorWater ww = new WarriorWater();
+            CustomWarriorWater cww = new CustomWarriorWater(ww);
             AddToOrderPage.Child = cww;
             if (DataContext is OrderLogic orderLogic)
             {
-                orderLogic.Add(cww.wwCustom);
+                orderLogic.Add(ww);
 
             }
             else

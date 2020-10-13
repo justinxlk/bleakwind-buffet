@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// GardenOrcOmelette object to be used throughout CustomGardenOrcOmelette
         /// </summary>
-        public GardenOrcOmelette gooCustom = new GardenOrcOmelette();
+        public GardenOrcOmelette gooCustom;
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to gooCustom
@@ -40,7 +40,14 @@ namespace PointOfSale.ItemCustomization
             DataContext = gooCustom;
         }
 
-        
+        public CustomGardenOrcOmelette(GardenOrcOmelette goo)
+        {
+            InitializeComponent();
+            gooCustom = goo;
+            DataContext = goo;
+        }
+
+
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(aaCustom);

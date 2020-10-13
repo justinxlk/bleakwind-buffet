@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// MarkarthMilk object to be used throughout CustomMarkarthMilk
         /// </summary>
-        public MarkarthMilk mmCustom = new MarkarthMilk();
+        public MarkarthMilk mmCustom;
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to mmCustom
@@ -40,7 +40,14 @@ namespace PointOfSale.ItemCustomization
             DataContext = mmCustom;
         }
 
-        
+        public CustomMarkarthMilk(MarkarthMilk mm)
+        {
+            InitializeComponent();
+            mmCustom = mm;
+            DataContext = mm;
+        }
+
+
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(mmCustom);

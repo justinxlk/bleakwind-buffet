@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// ThalmorTriple object to be used throughout CustomThalmorTriple
         /// </summary>
-        public ThalmorTriple ttCustom = new ThalmorTriple();
+        public ThalmorTriple ttCustom;
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to ttCustom
@@ -40,7 +40,13 @@ namespace PointOfSale.ItemCustomization
             DataContext = ttCustom;
         }
 
-        
+        public CustomThalmorTriple(ThalmorTriple tt)
+        {
+            InitializeComponent();
+            ttCustom = tt;
+            DataContext = tt;
+        }
+
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(ttCustom);

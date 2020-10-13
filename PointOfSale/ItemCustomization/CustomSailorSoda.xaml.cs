@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// SailorSoda object that is to be used throughout CustomSailorSoda
         /// </summary>
-        public SailorSoda ssCustom = new SailorSoda();
+        public SailorSoda ssCustom;
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to ssCustom
@@ -40,7 +40,12 @@ namespace PointOfSale.ItemCustomization
             DataContext = ssCustom;
         }
 
-        
+        public CustomSailorSoda(SailorSoda ss)
+        {
+            InitializeComponent();
+            ssCustom = ss;
+            DataContext = ss;
+        }
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(ssCustom);

@@ -5,7 +5,9 @@
  */
 
 
+using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -29,7 +31,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// AretinoAppleJuice object to be used throughout CustomAretinoAppleJuice
         /// </summary>
-        public AretinoAppleJuice aaCustom = new AretinoAppleJuice();
+        private AretinoAppleJuice aaCustom;
 
 
         /// <summary>
@@ -39,6 +41,13 @@ namespace PointOfSale.ItemCustomization
         {
             InitializeComponent();
             DataContext = aaCustom;
+        }
+
+        public CustomAretinoAppleJuice(AretinoAppleJuice aa)
+        {
+            InitializeComponent();
+            aaCustom = aa;
+            DataContext = aa;
         }
 
         

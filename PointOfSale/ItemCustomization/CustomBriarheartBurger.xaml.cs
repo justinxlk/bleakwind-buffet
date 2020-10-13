@@ -30,18 +30,25 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// BriarheartBurger object to be used throughout CustomBriarheartBurger
         /// </summary>
-        public BriarheartBurger bbCustom => new BriarheartBurger();
+        private BriarheartBurger bbCustom;
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to bbCustom
         /// </summary>
+        public CustomBriarheartBurger(BriarheartBurger bb)
+        {
+            InitializeComponent();
+            bbCustom = bb;
+            DataContext = bb;
+        }
+
         public CustomBriarheartBurger()
         {
             InitializeComponent();
             DataContext = bbCustom;
         }
 
-        
+
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(bbCustom);

@@ -115,6 +115,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 flavor = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("StringName"));
             }
         }
 

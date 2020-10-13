@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// DoubleDraugr to be used throughout CustomDoubleDraugr
         /// </summary>
-        public DoubleDraugr ddCustom = new DoubleDraugr();
+        public DoubleDraugr ddCustom;
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to ddCustom
@@ -40,7 +40,14 @@ namespace PointOfSale.ItemCustomization
             DataContext = ddCustom;
         }
 
-        
+        public CustomDoubleDraugr(DoubleDraugr dd)
+        {
+            InitializeComponent();
+            ddCustom = dd;
+            DataContext = dd;
+        }
+
+
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(ddCustom);

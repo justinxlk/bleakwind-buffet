@@ -12,6 +12,18 @@ namespace BleakwindBuffet.DataTests.UnitTests
 {
     public class OrderLogicTests
     {
+
+        [Fact]
+        public void ShouldHaveCorrectNumberForNumberOfOrderLogicsCreated()
+        {
+            
+            OrderLogic ol = new OrderLogic();
+            ol = new OrderLogic();
+            ol = new OrderLogic();
+            ol = new OrderLogic();
+            Assert.Equal(4, ol.Number);
+        }
+
         [Fact]
         public void SalesTaxRateGetsWhatIsSet()
         {
@@ -81,15 +93,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
             Assert.Equal(Math.Round(totCal, 2), ol.Calories);
         }
 
-        [Fact]
-        public void ShouldHaveCorrectNumberForNumberOfOrderLogicsCreated()
-        {
-            OrderLogic ol = new OrderLogic();
-            ol = new OrderLogic();
-            ol = new OrderLogic();
-            ol = new OrderLogic();
-            Assert.Equal(4, ol.Number);
-        }
+        
 
         [Theory]
         [InlineData("Subtotal")]
@@ -126,13 +130,11 @@ namespace BleakwindBuffet.DataTests.UnitTests
             BriarheartBurger bb = new BriarheartBurger();
             VokunSalad vs = new VokunSalad();
             vs.Size = Size.Medium;
-
-            //IOrderItem ioi = ol[0];
-            //Assert.PropertyChanged(ol, property, () => { ioi.Price = 10; });
+            ol.Add(aj);
 
             if (aj is IOrderItem item)
             {
-                Assert.PropertyChanged(ol, property, () => { aj.Size = Size.Large; });
+                Assert.PropertyChanged(ol, property, () => { aj.Size = Size.Large;  });
             }
             
         }

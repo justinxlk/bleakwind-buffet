@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// FriedMiraak object to be used throughout CustomFriedMiraar
         /// </summary>
-        public FriedMiraak fmCustom = new FriedMiraak();
+        public FriedMiraak fmCustom;
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to fmCustom
@@ -39,7 +39,14 @@ namespace PointOfSale.ItemCustomization
             InitializeComponent();
             DataContext = fmCustom;
         }
-        
+
+        public CustomFriedMiraak(FriedMiraak fm)
+        {
+            InitializeComponent();
+            fmCustom = fm;
+            DataContext = fm;
+        }
+
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(fmCustom);

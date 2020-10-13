@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// SmokehouseSkeleton object to be used throughout CustomSmokehouseSkeleton
         /// </summary>
-        public SmokehouseSkeleton ssCustom = new SmokehouseSkeleton();
+        public SmokehouseSkeleton ssCustom;
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to ssCustom
@@ -40,7 +40,12 @@ namespace PointOfSale.ItemCustomization
             DataContext = ssCustom;
         }
 
-        
+        public CustomSmokehouseSkeleton(SmokehouseSkeleton ss)
+        {
+            InitializeComponent();
+            ssCustom = ss;
+            DataContext = ss;
+        }
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(ssCustom);

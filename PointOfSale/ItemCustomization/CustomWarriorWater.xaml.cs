@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// WarriorWater object to be used throughout CustomWarriorWater
         /// </summary>
-        public WarriorWater wwCustom = new WarriorWater();
+        public WarriorWater wwCustom;
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to wwCustom
@@ -40,7 +40,14 @@ namespace PointOfSale.ItemCustomization
             DataContext = wwCustom;
         }
 
-        
+        public CustomWarriorWater(WarriorWater ww)
+        {
+            InitializeComponent();
+            wwCustom = ww;
+            DataContext = ww;
+        }
+
+
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(wwCustom);

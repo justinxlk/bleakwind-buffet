@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// DragonbornWaffleFries object to be used throughout CustomDragonbornWaffleFries
         /// </summary>
-        public DragonbornWaffleFries dbwfCustom = new DragonbornWaffleFries();
+        public DragonbornWaffleFries dbwfCustom;
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to dbwfCustom
@@ -40,7 +40,14 @@ namespace PointOfSale.ItemCustomization
             DataContext = dbwfCustom;
         }
 
-        
+        public CustomDragonbornWaffleFries(DragonbornWaffleFries dbwf)
+        {
+            InitializeComponent();
+            dbwfCustom = dbwf;
+            DataContext = dbwf;
+        }
+
+
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(dbwfCustom);

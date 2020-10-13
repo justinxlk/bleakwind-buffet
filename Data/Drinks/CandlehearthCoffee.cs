@@ -97,6 +97,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 decaf = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("StringName"));
             }
         }
 

@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// CandlehearthCoffee object to be used throughout CustomCandlehearthCoffee
         /// </summary>
-        public CandlehearthCoffee chcCustom = new CandlehearthCoffee();
+        private CandlehearthCoffee chcCustom;
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to chcCustom
@@ -40,7 +40,13 @@ namespace PointOfSale.ItemCustomization
             DataContext = chcCustom;
         }
 
-        
+        public CustomCandlehearthCoffee(CandlehearthCoffee chc)
+        {
+            InitializeComponent();
+            chcCustom = chc;
+            DataContext = chc;
+        }
+
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(chcCustom);

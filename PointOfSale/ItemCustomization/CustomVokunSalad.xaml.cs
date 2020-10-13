@@ -29,7 +29,7 @@ namespace PointOfSale.ItemCustomization
         /// <summary>
         /// VokunSalad object to be used throughout CustomVokunSalad
         /// </summary>
-        public VokunSalad vsCustom = new VokunSalad();
+        public VokunSalad vsCustom;
 
         /// <summary>
         /// Typical custructor that also links the buttons in the ui to vsCustom
@@ -40,7 +40,13 @@ namespace PointOfSale.ItemCustomization
             DataContext = vsCustom;
         }
 
-        
+        public CustomVokunSalad(VokunSalad vs)
+        {
+            InitializeComponent();
+            vsCustom = vs;
+            DataContext = vs;
+        }
+
         void ClickDone(object sender, RoutedEventArgs e)
         {
             //OrderComponent.PutInOrder(vsCustom);
