@@ -252,5 +252,26 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.IsAssignableFrom<INotifyPropertyChanged>(ss);
         }
 
+
+
+
+
+
+        /*
+        [Theory]
+        [InlineData(Size.Small, 4.50)]
+        public void Plll(Size size, double price)
+        {
+            SailorSoda ss = new SailorSoda() { Size = size };
+            Assert.Equal(price, ss.Price, 2);
+        }
+        */
+
+
+
+
+
+
+
     }
 }

@@ -30,7 +30,7 @@
         <TextBlock Grid.ColumnSpan="3" TextAlignment="Center" FontSize="30">Customize Aretino Apple Juice</TextBlock>
 
         <StackPanel Grid.Row="1" Grid.ColumnSpan="3">
-            <CheckBox FontSize="25" IsChecked="{Binding Path=Ice}" BorderThickness="10">Ice</CheckBox>
+            <CheckBox Grid.Column="1" FontSize="25" IsChecked="{Binding Path=Ice}" BorderThickness="10">Ice</CheckBox>
             <ListBox ItemsSource="{Binding Source={StaticResource sizes}}" SelectedItem="{Binding Path=Size}" FontSize="25"></ListBox>
         </StackPanel>        
     </Grid>

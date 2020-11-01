@@ -1,0 +1,171 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1>Bleakwind Buffet</h1>
+    <h1 class="display-4">Welcome</h1>
+    <p>We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!.</p>
+    <h2>Entrees</h2>
+    <div class="menu-items">
+
+        @{
+
+            foreach (BleakwindBuffet.Data.IOrderItem orderitem in BleakwindBuffet.Data.Menu.Entrees())
+            {
+
+                string name = "";
+                BleakwindBuffet.Data.Entrees.Entree entree;
+                if (orderitem.ToString().Contains("Briarheart Burger")) { name = "Briarheart Burger"; entree = (BleakwindBuffet.Data.Entrees.BriarheartBurger)orderitem; }
+                else if (orderitem.ToString().Contains("Double Draugr")) { name = "Double Draugr"; entree = (BleakwindBuffet.Data.Entrees.DoubleDraugr)orderitem; }
+                else if (orderitem.ToString().Contains("Garden Orc Omelette")) { name = "Garden Orc Omelette"; entree = (BleakwindBuffet.Data.Entrees.GardenOrcOmelette)orderitem; }
+                else if (orderitem.ToString().Contains("Philly Poacher")) { name = "Philly Poacher"; entree = (BleakwindBuffet.Data.Entrees.PhillyPoacher)orderitem; }
+                else if (orderitem.ToString().Contains("Smokehouse Skeleton")) { name = "Smokehouse Skeleton"; entree = (BleakwindBuffet.Data.Entrees.SmokehouseSkeleton)orderitem; }
+                else if (orderitem.ToString().Contains("Thalmor Triple")) { name = "Thalmor Triple"; entree = (BleakwindBuffet.Data.Entrees.ThalmorTriple)orderitem; }
+                else if (orderitem.ToString().Contains("Thugs T-Bone")) { name = "Thugs T-Bone"; entree = (BleakwindBuffet.Data.Entrees.ThugsTBone)orderitem; }
+                else { name = ""; entree = new BleakwindBuffet.Data.Entrees.BriarheartBurger(); };
+                <div class="menu-item">
+                    <h4>@name</h4>
+                    <table align="center" cellpadding="5">
+                        <tr>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                        <tr >
+                            <td>$@entree.Price</td>
+                            <td>@entree.Calories</td>
+                    </table>
+                </div>
+            }
+
+        }
+
+
+
+
+    </div>
+    <h2>Sides</h2>
+    <div class="menu-items">
+
+        @{
+            int j = 0;
+            while(j < 4)
+            {
+                foreach (BleakwindBuffet.Data.IOrderItem item in BleakwindBuffet.Data.Menu.Sides())
+                {
+                    j++;
+                    string name = "";
+                    BleakwindBuffet.Data.Sides.Side side;
+                    if (item.ToString().Contains("Dragonborn Waffle Fries")) { name = "Dragonborn Waffle Fries"; side = (BleakwindBuffet.Data.Sides.DragonbornWaffleFries)item; }
+                    else if (item.ToString().Contains("Fried Miraak")) { name = "Fried Miraak"; side = (BleakwindBuffet.Data.Sides.FriedMiraak)item; }
+                    else if (item.ToString().Contains("Mad Otar Grits")) { name = "Mad Otar Grits"; side = (BleakwindBuffet.Data.Sides.MadOtarGrits)item; }
+                    else if (item.ToString().Contains("Vokun Salad")) { name = "Vokun Salad"; side = (BleakwindBuffet.Data.Sides.VokunSalad)item; }
+                    else { name = ""; side = new BleakwindBuffet.Data.Sides.DragonbornWaffleFries(); };
+                <div class="menu-item">
+                    <h4>@name</h4>
+                    <table align="center" cellpadding="5">
+                        <tr>
+                            <th>Sizes</th>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                        <tr @{side.Size = BleakwindBuffet.Data.Enums.Size.Small;}>
+                            <th>Small</th>
+                            <td>$@side.Price</td>
+                            <td>@side.Calories</td>
+                        </tr>
+                        <tr @{side.Size = BleakwindBuffet.Data.Enums.Size.Medium;}>
+                            <th>Medium</th>
+                            <td>$@side.Price</td>
+                            <td>@side.Calories</td>
+                        </tr>
+                        <tr @{side.Size = BleakwindBuffet.Data.Enums.Size.Large;}>
+                            <th>Large</th>
+                            <td>$@side.Price</td>
+                            <td>@side.Calories</td>
+                        </tr>
+                    </table>
+                </div>
+                                    j++;
+                                }
+                            }
+        }
+
+
+
+
+    </div>
+    <h2>Drinks</h2>
+    <div class="menu-items">
+        
+            @{
+                int i = 0;
+                while (i < 5) {
+                    foreach (BleakwindBuffet.Data.IOrderItem drink in BleakwindBuffet.Data.Menu.Drinks())
+                    {
+
+                        string name = "";
+                        BleakwindBuffet.Data.Drinks.Drink specificDrink;
+                        if (drink.ToString().Contains("Aretino Apple Juice")) { name = "Aretino Apple Juice"; specificDrink = (BleakwindBuffet.Data.Drinks.AretinoAppleJuice)drink; }
+                        else if (drink.ToString().Contains("Candlehearth Coffee")) { name = "Candlehearth Coffee"; specificDrink = (BleakwindBuffet.Data.Drinks.CandlehearthCoffee)drink; }
+                        else if (drink.ToString().Contains("Markarth Milk")) { name = "Markarth Milk"; specificDrink = (BleakwindBuffet.Data.Drinks.MarkarthMilk)drink; }
+                        else if (drink.ToString().Contains("Sailor Soda")) { name = "Sailor Soda"; specificDrink = (BleakwindBuffet.Data.Drinks.SailorSoda)drink; }
+                        else if (drink.ToString().Contains("Warrior Water")) { name = "Warrior Water"; specificDrink = (BleakwindBuffet.Data.Drinks.WarriorWater)drink; }
+                        else { name = ""; specificDrink = new BleakwindBuffet.Data.Drinks.AretinoAppleJuice(); };
+                    <div class="menu-item">
+                        <h4>@name</h4>
+                        <table align="center" cellpadding="5">
+                            <tr>
+                                <th>Sizes</th>
+                                <th>Price</th>
+                                <th>Calories</th>
+                            </tr>
+                            <tr @{specificDrink.Size = BleakwindBuffet.Data.Enums.Size.Small;}>
+                                <th>Small</th>
+                                <td>$@specificDrink.Price</td>
+                                <td>@specificDrink.Calories</td>
+                            </tr>
+                            <tr @{specificDrink.Size = BleakwindBuffet.Data.Enums.Size.Medium;}>
+                                <th>Medium</th>
+                                <td>$@specificDrink.Price</td>
+                                <td>@specificDrink.Calories</td>
+                            </tr>
+                            <tr @{specificDrink.Size = BleakwindBuffet.Data.Enums.Size.Large;}>
+                                <th>Large</th>
+                                <td>$@specificDrink.Price</td>
+                                <td>@specificDrink.Calories</td>
+                            </tr>
+                        </table>
+                    </div>
+                                        i++;
+                                    }
+
+                                }
+                                }
+
+
+
+    </div>
+    <h2>Combo</h2>
+    <p>Any Drink, Side, and Entree can be combo'd togather for a $1 discount!</p>
+    <h2>Sailor Soda Flavors</h2>
+    @{ 
+        System.Text.StringBuilder flavors = new System.Text.StringBuilder();
+        foreach (BleakwindBuffet.Data.Enums.SodaFlavor sf in Enum.GetValues(typeof(BleakwindBuffet.Data.Enums.SodaFlavor)))
+        {
+            if(sf == BleakwindBuffet.Data.Enums.SodaFlavor.Watermelon)
+            {
+                flavors.Append($"and {sf}.");
+            }
+            else
+            {
+                flavors.Append($"{sf}, ");
+            }
+
+        }
+        <p>@flavors.ToString()</p>
+        }
+    
+</div>
