@@ -1,3 +1,9 @@
+/*
+ * Author: Justin Kingry
+ * Class name: Program.cs
+ * Purpose: builds the creates web host
+ */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

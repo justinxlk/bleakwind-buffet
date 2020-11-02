@@ -1,3 +1,9 @@
+/*
+ * Author: Justin Kingry
+ * Class name: Startup.cs
+ * Purpose: Starts up and configures the web page
+ */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
