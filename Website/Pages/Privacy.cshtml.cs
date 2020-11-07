@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Justin Kingry
+ * Class name: Privacy.cshtml.cs
+ * Purpose: Models the privacy page
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

@@ -118,5 +118,7 @@ namespace BleakwindBuffet.Data
             private set { specialInstructions = value; } 
         }
 
+        public string StringName { get { return "Don't use this"; } }
+
     }
 }

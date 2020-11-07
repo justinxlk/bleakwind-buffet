@@ -1,3 +1,9 @@
+/*
+ * Author: Justin Kingry
+ * Class name: About.cshtml.cs
+ * Purpose: Models the About Page
+ */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,3 +1,9 @@
+/*
+ * Author: Justin Kingry
+ * Class name: Error.cshtml.cs
+ * Purpose: Models the error page
+ */
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
