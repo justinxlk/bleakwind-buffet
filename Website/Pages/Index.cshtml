@@ -43,14 +43,14 @@
         <div id="results">
             <h1>Search Results</h1>
 
-            <ul class="movie-list">
+            <div class="float-columns">
                 @foreach (BleakwindBuffet.Data.IOrderItem menuitem in @Model.Items)
                 {
                     string typeOfItemName = "";
                     if (menuitem is BleakwindBuffet.Data.Drinks.Drink) typeOfItemName = "Drink";
                     else if (menuitem is BleakwindBuffet.Data.Entrees.Entree) typeOfItemName = "Entree";
                     else if (menuitem is BleakwindBuffet.Data.Sides.Side) typeOfItemName = "Side";
-                    <li>
+                    <div>
                         <div class="details">
                             <h3 class="title">@menuitem.StringName</h3>
                             <div>@menuitem.Description</div>
@@ -70,10 +70,12 @@
                                 </div>
                             }
                         </div>
-                    </li>
+                    </div>
                 }
-            </ul>
+            </div>
+            <div class="clearfix"></div>
         </div>
+        
     </form>
     <!--
     <h2>Entrees</h2>
