@@ -30,5 +30,7 @@ namespace BleakwindBuffet.Data
         List<string> SpecialInstructions { get; }
 
         string StringName { get; }
+
+        string Description { get; }
     }
 }

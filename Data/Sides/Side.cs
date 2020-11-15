@@ -60,5 +60,7 @@ namespace BleakwindBuffet.Data.Sides
         /// </summary>
         public virtual string StringPrice { get { return "$" + Price; } }
 
+        public abstract string Description { get; }
+
     }
 }

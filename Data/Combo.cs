@@ -120,5 +120,7 @@ namespace BleakwindBuffet.Data
 
         public string StringName { get { return "Don't use this"; } }
 
+        public string Description => throw new NotImplementedException();
+
     }
 }

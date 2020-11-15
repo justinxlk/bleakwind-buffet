@@ -43,5 +43,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public virtual string StringPrice { get { return "$" + Price; } }
 
+        public abstract string Description { get; }
+
     }
 }
