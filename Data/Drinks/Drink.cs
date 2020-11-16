@@ -64,6 +64,9 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public virtual string StringPrice { get { return "$" + Price; } }
 
+        /// <summary>
+        /// A description of the drink
+        /// </summary>
         public abstract string Description { get; }
     }
 }

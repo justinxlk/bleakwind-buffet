@@ -155,6 +155,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// A description of Candlehearth Coffee
+        /// </summary>
         public override string Description { get{ return "Fair trade, fresh ground dark roast coffee."; } }
 
     }

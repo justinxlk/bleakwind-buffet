@@ -87,6 +87,9 @@ namespace BleakwindBuffet.Data.Sides
             return $"{Size} Fried Miraak";
         }
 
+        /// <summary>
+        /// A description of Fried Miraak
+        /// </summary>
         public override string Description { get { return "Perfectly prepared hash brown pancakes."; } }
 
     }

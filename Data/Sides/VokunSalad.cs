@@ -87,6 +87,9 @@ namespace BleakwindBuffet.Data.Sides
             return $"{Size} Vokun Salad";
         }
 
+        /// <summary>
+        /// A description of Vokun Salad
+        /// </summary>
         public override string Description { get { return "A seasonal fruit salad of mellons, berries, mango, grape, apple, and oranges."; } }
 
     }
