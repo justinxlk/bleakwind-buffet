@@ -38,6 +38,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
             Assert.Equal(dwf3.ToString(), items[3].ToString());
         }
 
+        /*
         [Theory]
         [InlineData(null, null)]
         [InlineData(null, 5.00)]
@@ -91,7 +92,9 @@ namespace BleakwindBuffet.DataTests.UnitTests
                 Assert.Equal(results, FilterLogic.FilterByPrice(items, min, max));
             }
         }
+        */
 
+        /*
         [Theory]
         [InlineData(null, null)]
         [InlineData(null, 700)]
@@ -153,6 +156,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
                 //Assert.Equal(results, FilterLogic.FilterByCalories(items, min, max));
             }
         }
+        */
 
         [Theory]
         [InlineData("Drink", "Entree", "Side")]

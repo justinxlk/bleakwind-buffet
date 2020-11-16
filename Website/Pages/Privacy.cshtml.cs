@@ -14,15 +14,25 @@ using Microsoft.Extensions.Logging;
 
 namespace Website.Pages
 {
+    /// <summary>
+    /// Model for the Privacy page
+    /// </summary>
     public class PrivacyModel : PageModel
     {
         private readonly ILogger<PrivacyModel> _logger;
 
+        /// <summary>
+        /// constructor for the PrivacyModel class sets the _logger
+        /// </summary>
+        /// <param name="logger">the privacy model logger</param>
         public PrivacyModel(ILogger<PrivacyModel> logger)
         {
             _logger = logger;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void OnGet()
         {
         }

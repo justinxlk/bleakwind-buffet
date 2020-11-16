@@ -134,5 +134,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.IsAssignableFrom<INotifyPropertyChanged>(fm);
         }
 
+        [Fact]
+        public void GivesCorrectDesciption()
+        {
+            var item = new FriedMiraak();
+            string idealDescription = "Perfectly prepared hash brown pancakes.";
+            Assert.Equal(idealDescription, item.Description);
+        }
+
     }
 }

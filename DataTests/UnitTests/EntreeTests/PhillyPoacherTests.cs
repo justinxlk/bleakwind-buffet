@@ -198,5 +198,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.IsAssignableFrom<INotifyPropertyChanged>(pp);
         }
 
+        [Fact]
+        public void GivesCorrectDesciption()
+        {
+            var item = new PhillyPoacher();
+            string idealDescription = "Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.";
+            Assert.Equal(idealDescription, item.Description);
+        }
+
     }
 }

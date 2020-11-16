@@ -271,7 +271,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 
 
 
-
+        [Fact]
+        public void GivesCorrectDesciption()
+        {
+            var item = new SailorSoda();
+            string idealDescription = "An old-fashioned jerked soda, carbonated water and flavored syrup poured over a bed of crushed ice.";
+            Assert.Equal(idealDescription, item.Description);
+        }
 
     }
 }

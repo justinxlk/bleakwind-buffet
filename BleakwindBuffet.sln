@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTests", "DataTests\Data
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{BC0FFF60-27FC-40D2-8F76-2FD1619A4BE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Website\Website.csproj", "{3518C7BE-D987-4969-BD04-9AA2F82C4488}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Website", "Website\Website.csproj", "{3518C7BE-D987-4969-BD04-9AA2F82C4488}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

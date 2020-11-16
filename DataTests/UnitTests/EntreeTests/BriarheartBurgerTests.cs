@@ -292,5 +292,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.IsAssignableFrom<INotifyPropertyChanged>(bb);
         }
 
+        [Fact]
+        public void GivesCorrectDesciption()
+        {
+            var item = new BriarheartBurger();
+            string idealDescription = "Single patty burger on a brioche bun. Comes with ketchup, mustard, pickle, and cheese.";
+            Assert.Equal(idealDescription, item.Description);
+        }
+
     }
 }

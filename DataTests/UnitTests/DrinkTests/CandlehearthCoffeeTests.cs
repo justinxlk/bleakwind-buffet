@@ -268,5 +268,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.IsAssignableFrom<INotifyPropertyChanged>(chc);
         }
 
+        [Fact]
+        public void GivesCorrectDesciption()
+        {
+            var item = new CandlehearthCoffee();
+            string idealDescription = "Fair trade, fresh ground dark roast coffee.";
+            Assert.Equal(idealDescription, item.Description);
+        }
+
     }
 }

@@ -13,8 +13,14 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Website.Pages
 {
+    /// <summary>
+    /// Model for the About page of the website
+    /// </summary>
     public class AboutModel : PageModel
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public void OnGet()
         {
         }

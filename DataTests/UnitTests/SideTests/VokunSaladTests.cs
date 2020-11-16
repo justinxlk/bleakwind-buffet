@@ -134,5 +134,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.IsAssignableFrom<INotifyPropertyChanged>(vs);
         }
 
+        [Fact]
+        public void GivesCorrectDesciption()
+        {
+            var item = new VokunSalad();
+            string idealDescription = "A seasonal fruit salad of mellons, berries, mango, grape, apple, and oranges.";
+            Assert.Equal(idealDescription, item.Description);
+        }
+
     }
 }
